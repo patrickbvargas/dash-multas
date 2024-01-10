@@ -1,0 +1,306 @@
+[
+  {
+    "id": 1,
+    "employeeId": 1,
+    "trafficViolationsId": [1],
+    "code": "202311001",
+    "statusGroup": "liberado",
+    "status": "liberado",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 2500.1,
+    "paymentType": "Dinheiro",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "employeeId": 2,
+    "trafficViolationsId": [1, 2],
+    "code": "202311002",
+    "statusGroup": "administrativo",
+    "status": "nait",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 2500.1,
+    "paymentType": "Boleto",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "employeeId": 3,
+    "trafficViolationsId": [3],
+    "code": "202311003",
+    "statusGroup": "administrativo",
+    "status": "nip",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 1200.8,
+    "paymentType": "Pix",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "employeeId": 4,
+    "trafficViolationsId": [4],
+    "code": "202311004",
+    "statusGroup": "administrativo",
+    "status": "cetran",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 500,
+    "paymentType": "Cartão de Crédito",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "employeeId": 1,
+    "trafficViolationsId": [5],
+    "code": "202311005",
+    "statusGroup": "judicial",
+    "status": "instauração",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 500,
+    "paymentType": "Cartão de Débito",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "employeeId": 2,
+    "trafficViolationsId": [6],
+    "code": "202311006",
+    "statusGroup": "judicial",
+    "status": "imposição",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 4000,
+    "paymentType": "Transferência Bancária",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "employeeId": 3,
+    "trafficViolationsId": [7],
+    "code": "202311007",
+    "statusGroup": "judicial",
+    "status": "cetran",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 600.6,
+    "paymentType": "Outro",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "employeeId": 4,
+    "trafficViolationsId": [8],
+    "code": "202311008",
+    "statusGroup": "juridico",
+    "status": "ajuizar",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 100,
+    "paymentType": "Dinheiro",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "employeeId": 1,
+    "trafficViolationsId": [9],
+    "code": "202311009",
+    "statusGroup": "juridico",
+    "status": "ajuizado",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 300,
+    "paymentType": "Boleto",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "employeeId": 2,
+    "trafficViolationsId": [10],
+    "code": "202311010",
+    "statusGroup": "juridico",
+    "status": "recorrer",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 2500,
+    "paymentType": "Pix",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "employeeId": 3,
+    "trafficViolationsId": [11],
+    "code": "202311011",
+    "statusGroup": "juridico",
+    "status": "tutela concedida",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 2500.1,
+    "paymentType": "Cartão de Crédito",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "employeeId": 4,
+    "trafficViolationsId": [12],
+    "code": "202311012",
+    "statusGroup": "judicial",
+    "status": "imposição",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 0,
+    "paymentType": "Cartão de Débito",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "employeeId": 1,
+    "trafficViolationsId": [13],
+    "code": "202311013",
+    "statusGroup": "administrativo",
+    "status": "nip",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 2000,
+    "paymentType": "Transferência Bancária",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "employeeId": 2,
+    "trafficViolationsId": [14],
+    "code": "202311014",
+    "statusGroup": "liberado",
+    "status": "liberado",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 1300,
+    "paymentType": "Outro",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "employeeId": 3,
+    "trafficViolationsId": [15],
+    "code": "202311015",
+    "statusGroup": "judicial",
+    "status": "instauração",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 1000,
+    "paymentType": "Dinheiro",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "employeeId": 4,
+    "trafficViolationsId": [16],
+    "code": "202311016",
+    "statusGroup": "juridico",
+    "status": "tutela concedida",
+    "service": "Suspensiva Exc. Veloc. 50%",
+    "cost": 200,
+    "paymentType": "Boleto",
+    "deadline": "2023-10-04",
+    "observation": "Utilizar artigo X para defesa",
+    "attachments": [
+      {
+        "fileName": "recurso.pdf",
+        "url": "/doc/recurso.pdf"
+      }
+    ]
+  }
+]
