@@ -21,7 +21,7 @@ const tagVariants = cva(
 );
 
 interface TagProps extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof tagVariants> {
-  label: string;
+  label: string | number;
 }
 
 const Tag = ({ label = "", variant = "default", className = "", ...props }: TagProps) => {

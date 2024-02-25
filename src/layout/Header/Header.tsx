@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, ThemeSwitcher } from "@components";
-import { PlusIcon } from "@icons/mini";
 import { useLocation } from "react-router-dom";
+import { Button } from "@components";
+import { PlusIcon } from "@icons/mini";
 import { useAppContext } from "@contexts";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
@@ -47,28 +47,32 @@ const PATHNAME_CONFIG: Pathname[] = [
   },
 ];
 
-// TODO: check pathname config
+// TODO: review
 const Header = ({ className = "", ...props }: HeaderProps) => {
-  const { pageTitle, setPageTitle } = useAppContext();
+  const { pageTitle, setPageTitle, showNotification } = useAppContext();
   const location = useLocation();
 
   React.useEffect(() => {
     const matchConfig = PATHNAME_CONFIG.find(({ pathname }) => pathname === location.pathname);
     if (matchConfig) {
       setPageTitle(matchConfig.title);
-      document.title = `Empresa | ${matchConfig.title}`;
+      document.title = `Dash Multas | ${matchConfig.title}`;
     }
   }, [location]);
 
+  const handleClick = () => {
+    showNotification("Quase lá! Estamos implementando esta funcionalidade.", "warning");
+  };
+
   return (
-    <header className="flex items-center justify-between px-8 pb-4 pt-8" {...props}>
-      <h1 className="text-2xl font-normal uppercase tracking-wider text-gray-600 dark:text-black-50">
+    <header
+      className="flex flex-col items-center justify-between gap-4 overflow-hidden px-2 pb-2 pt-4 sm:flex-row sm:px-8 sm:pb-4 sm:pt-8"
+      {...props}
+    >
+      <h1 className="max-w-full truncate text-2xl font-normal uppercase tracking-wider text-gray-600 dark:text-black-50">
         {pageTitle}
       </h1>
-      <div className="flex gap-2">
-        <ThemeSwitcher />
-        <Button label="Criar" icon={<PlusIcon className="h-5 w-5" />} type="startIcon" />
-      </div>
+      <Button label="Criar" icon={<PlusIcon className="h-5" />} type="startIcon" onClick={handleClick} />
     </header>
   );
 };

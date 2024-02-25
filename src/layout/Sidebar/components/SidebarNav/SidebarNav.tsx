@@ -72,7 +72,7 @@ const NAV_LINKS: NavGroup[] = [
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {}
 
-// TODO: check nav_links config
+// TODO: review
 const SidebarNav = ({ className = "", ...props }: SidebarNavProps) => {
   return (
     <nav className="w-full flex-1" {...props}>

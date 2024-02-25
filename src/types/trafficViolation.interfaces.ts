@@ -1,42 +1,32 @@
-import { IAppeal, IAttachment, IDriver } from "@types";
+import { Appeal, Attachment, Driver } from "@types";
 
-interface Vehicle {
+export interface Vehicle {
   plate: string;
   renavam: string;
   brand: string;
 }
 
-export interface ITrafficViolation {
-  id: number;
-  infringementNotice: string; // [auto de infração]
-  issuer: string; // [autuador]
-  legalBasis: string; // [amparo legal]
+export interface Deadlines {
+  driverPresentation: string;
+  defense: string;
+  firstInstance: string;
+}
+
+export interface TrafficViolation {
+  id: string;
+  appealId: string | null;
+  driverId: string;
+  infringementNotice: string;
+  issuer: string;
+  legalBasis: string;
   selfSuspensive: boolean;
-  deadlines: {
-    driverPresentation: string;
-    defense: string;
-    firstInstance: string;
-  };
-  driver: Pick<IDriver, "id" | "fullName" | "license" | "cpf" | "identification" | "birthdate">;
-  appeal: Pick<IAppeal, "id" | "code" | "statusGroup" | "status"> | null;
+  deadlines: Deadlines;
   vehicle: Vehicle;
-  attachments?: IAttachment[];
+  attachments?: Attachment[];
 }
 
-export interface ITrafficViolationList {
-  id: number;
-  infringementNotice: string; // [auto de infração]
-  selfSuspensive: boolean;
-  driver: {
-    fullName: string;
-  };
-  vehicle: {
-    plate: string;
-  };
-  appeal: {
-    code: string;
-  };
+export interface TrafficViolationDetailed {
+  trafficViolation: TrafficViolation;
+  driver: Driver;
+  appeal: Appeal | null;
 }
-
-// Status ?
-// violationType ?

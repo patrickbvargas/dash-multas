@@ -1,5 +1,7 @@
+import { UnderConstruction } from "@components";
+
 const Calendar = () => {
-  return <div>Calendar</div>;
+  return <UnderConstruction />;
 };
 
 export default Calendar;

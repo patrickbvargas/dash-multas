@@ -6,15 +6,15 @@ interface SidebarControlProps extends React.HTMLAttributes<HTMLButtonElement> {
   setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SidebarControl = ({ setIsCollapsed, ...props }: SidebarControlProps) => {
+const SidebarControl = ({ setIsCollapsed = () => {}, ...props }: SidebarControlProps) => {
   return (
     <button
-      className="rounded-lg p-2 transition duration-300 hover:bg-black-600"
+      className="rounded-lg p-2 transition duration-300 hover:bg-black-600 group-[.is-collapsed]/sidebar:hidden sm:group-[.is-collapsed]/sidebar:block"
       onClick={() => setIsCollapsed((prev) => !prev)}
       {...props}
     >
       <ChevronLeftIcon
-        className={cn("h-5 w-5 transition-all duration-700 group-[.is-collapsed]/sidebar:rotate-180")}
+        className={cn("h-5 transition-all duration-700 group-[.is-collapsed]/sidebar:rotate-180")}
       />
     </button>
   );

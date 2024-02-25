@@ -11,6 +11,7 @@ import {
   UserIcon,
   DocumentIcon,
   WalletIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/solid";
 
 export {
@@ -26,4 +27,5 @@ export {
   UserIcon,
   DocumentIcon,
   WalletIcon,
+  XMarkIcon,
 };

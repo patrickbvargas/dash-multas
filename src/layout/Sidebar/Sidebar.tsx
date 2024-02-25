@@ -4,11 +4,29 @@ import SidebarNav from "./components/SidebarNav/SidebarNav";
 import SidebarControl from "./components/SidebarControl";
 import { cn } from "@utils";
 import { useLocalStorage } from "@hooks";
+import { ThemeSwitcher } from "@components";
+import { useAppContext } from "@contexts";
 
 interface SidebarProps extends React.HTMLAttributes<HTMLElement> {}
 
 const Sidebar = ({ className = "", ...props }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useLocalStorage("sidebar-collapsed", false);
+  const { showNotification } = useAppContext();
+
+  const handleCollapse = () => {
+    if (window.matchMedia("(max-width: 600px").matches) {
+      showNotification(
+        "Para uma experiência mais completa, recomendamos utilizar um computador para navegar.",
+        "info",
+      );
+      setIsCollapsed(true);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleCollapse);
+    return () => window.removeEventListener("resize", handleCollapse);
+  }, []);
 
   return (
     <aside
@@ -21,6 +39,7 @@ const Sidebar = ({ className = "", ...props }: SidebarProps) => {
     >
       <SidebarLogo />
       <SidebarNav />
+      <ThemeSwitcher />
       <SidebarControl setIsCollapsed={setIsCollapsed} />
     </aside>
   );

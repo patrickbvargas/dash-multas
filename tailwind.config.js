@@ -14,7 +14,7 @@ export default {
         layout: "auto 1fr",
       },
       colors: {
-        accent: "#ffdd21",
+        accent: "#ba68c8",
         white: "#ffffff",
         black: {
           50: "#dcdcdc",

@@ -1,8 +1,8 @@
 import React from "react";
-import { cn } from "@utils";
 import { VariantProps, cva } from "class-variance-authority";
+import { cn } from "@utils";
 
-const cardFieldVariants = cva(" text-xs truncate", {
+const cardFieldVariants = cva("text-xs truncate", {
   variants: {
     variant: {
       default: "font-normal",

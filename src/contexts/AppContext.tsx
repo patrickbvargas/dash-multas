@@ -1,11 +1,15 @@
 import React from "react";
+import { NotificationConfig, NotificationVariant } from "@types";
 
-interface IAppContext {
+interface AppContext {
   pageTitle: string;
   setPageTitle: React.Dispatch<React.SetStateAction<string>>;
+  notificationConfig: NotificationConfig;
+  setNotificationConfig: React.Dispatch<React.SetStateAction<NotificationConfig>>;
+  showNotification: (message: string, variant: NotificationVariant) => void;
 }
 
-export const AppContext = React.createContext<IAppContext | null>(null);
+export const AppContext = React.createContext<AppContext | null>(null);
 
 export const useAppContext = () => {
   const context = React.useContext(AppContext);
@@ -15,6 +19,29 @@ export const useAppContext = () => {
 
 export const AppContextProvider = ({ children }: React.PropsWithChildren) => {
   const [pageTitle, setPageTitle] = React.useState("");
+  const [notificationConfig, setNotificationConfig] = React.useState<NotificationConfig>({
+    message: "",
+    variant: "default",
+  });
 
-  return <AppContext.Provider value={{ pageTitle, setPageTitle }}>{children}</AppContext.Provider>;
+  const showNotification = (message: string, variant: NotificationVariant) => {
+    setNotificationConfig({
+      message,
+      variant,
+    });
+  };
+
+  return (
+    <AppContext.Provider
+      value={{
+        pageTitle,
+        setPageTitle,
+        notificationConfig,
+        setNotificationConfig,
+        showNotification,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };

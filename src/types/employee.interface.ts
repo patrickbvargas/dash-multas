@@ -1,5 +1,5 @@
-export default interface IEmployee {
-  id: number;
+export interface Employee {
+  id: string;
   fullName: string;
   role: string;
 }

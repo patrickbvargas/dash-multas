@@ -1,41 +1,66 @@
-import React from "react";
-import { Card, CardList, Tag } from "@components";
-import { IAppealList } from "@types";
-import { fetchAppeals } from "@services";
-import { convertDateFormat } from "@utils";
+import { Link } from "react-router-dom";
+import { Card, CardList, Loading, EmptyData, Tag, Error } from "@components";
+import { fetchAppealsDetails } from "@services";
+import { convertDateToLocaleFormat } from "@utils";
+import { useQuery } from "react-query";
+import { useAppContext } from "@contexts";
+import { AppealStatusGroup } from "@types";
 
-const AppealList = () => {
-  const [data, setData] = React.useState<IAppealList[] | null>(null);
+interface AppealListProps {
+  statusGroup?: AppealStatusGroup | null;
+}
 
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetchAppeals();
-      setData(res);
-    };
-    fetchData();
-  }, []);
+const AppealList = ({ statusGroup = null }: AppealListProps) => {
+  const { showNotification } = useAppContext();
 
-  // TODO: create useFetch and get isLoading  - include Loading component - include <Error/>
-  // TODO: include EmptyData component
-  if (!data) return;
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["get-appeals", statusGroup],
+    queryFn: () => fetchAppealsDetails(statusGroup),
+  });
+
+  const handleEditAction = (id: string) => {
+    showNotification(
+      `Quase lá! Estamos implementando funcionalidade de edição. [AppealId: ${id}]`,
+      "warning",
+    );
+  };
+
+  const handleDeleteAction = (id: string) => {
+    showNotification(
+      `Quase lá! Estamos implementando funcionalidade de exclusão. [AppealId: ${id}]`,
+      "warning",
+    );
+  };
+
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
+  if (!data) return <EmptyData />;
 
   return (
     <div className="h-full">
       <CardList>
-        {data.map((appeal) => (
-          <Card.Root key={appeal.id}>
-            <Card.Header title={appeal.code} isPriority={appeal.isPriority} />
-            <Card.Content>
-              <Card.Field label="Condutor" value={appeal.driver.fullName} />
-              <Card.Field label="Responsável" value={appeal.employee.fullName} />
-              <Card.Field
-                label="Prazo Fatal"
-                value={convertDateFormat(appeal.deadline)}
-                variant="highlight"
+        {data.map(({ appeal, trafficViolation, driver, employee }) => (
+          <Link to={`/recursos/${appeal.id}`} key={appeal.id}>
+            <Card.Root key={appeal.id}>
+              <Card.Header
+                title={appeal.code}
+                isPriority={trafficViolation.selfSuspensive}
+                editCallback={() => handleEditAction(appeal.id)}
+                deleteCallback={() => handleDeleteAction(appeal.id)}
               />
-              <Tag label={appeal.status} variant={appeal.statusGroup} />
-            </Card.Content>
-          </Card.Root>
+              <Card.Divider />
+              <Card.Content>
+                <Card.Field label="Condutor" value={driver.fullName} />
+                <Card.Field label="Responsável" value={employee.fullName} />
+                <Card.Field
+                  label="Prazo Fatal"
+                  value={convertDateToLocaleFormat(appeal.deadline)}
+                  variant="highlight"
+                />
+                <Tag label={appeal.status} variant={appeal.statusGroup} />
+              </Card.Content>
+            </Card.Root>
+          </Link>
         ))}
       </CardList>
     </div>

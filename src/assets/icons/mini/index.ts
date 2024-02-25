@@ -9,6 +9,8 @@ import {
   MoonIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  XMarkIcon,
+  EyeSlashIcon,
 } from "@heroicons/react/20/solid";
 
 export {
@@ -22,4 +24,6 @@ export {
   MoonIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  XMarkIcon,
+  EyeSlashIcon,
 };

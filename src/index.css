@@ -16,4 +16,8 @@
   *::-webkit-scrollbar-thumb {
     @apply rounded-lg bg-gray-200 dark:bg-black-600;
   }
+
+  *:focus {
+    @apply outline-offset-0 outline-purple-300;
+  }
 }

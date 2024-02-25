@@ -1,0 +1,1174 @@
+{
+  "drivers": [
+    {
+      "id": 1,
+      "fullName": "Maria Eduarda Silva Santos",
+      "identification": "8543726910",
+      "identificationState": "SP",
+      "cpf": "15468793201",
+      "birthdate": "1985-07-12",
+      "maritalStatus": "Solteiro(a)",
+      "profession": "Administrador(a)",
+      "address": {
+        "street": "Rua dos Jasmins",
+        "houseNumber": "548",
+        "complement": "",
+        "zipCode": "04538010",
+        "neighborhood": "Jardim Paulista",
+        "city": "São Paulo",
+        "state": "São Paulo"
+      },
+      "license": {
+        "licenseNumber": "123456789012",
+        "category": "B",
+        "governmentPassword": "abc123"
+      },
+      "contact": {
+        "email": "mariaeduarda@email.com",
+        "phoneNumber": "011987654321"
+      },
+      "attachments": [
+        {
+          "fileName": "rg.pdf",
+          "url": "/doc/rg.pdf"
+        },
+        {
+          "fileName": "cnh.pdf",
+          "url": "/doc/cnh.pdf"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullName": "João Pedro de Freitas Costa",
+      "identification": "9762158305",
+      "identificationState": "BA",
+      "cpf": "58136927403",
+      "birthdate": "1994-05-21",
+      "maritalStatus": "Casado(a)",
+      "profession": "Professor(a)",
+      "address": {
+        "street": "Rua da Luz",
+        "houseNumber": "204",
+        "complement": "Ap 301",
+        "zipCode": "45807010",
+        "neighborhood": "Pituba",
+        "city": "Salvador",
+        "state": "Bahia"
+      },
+      "license": {
+        "licenseNumber": "098765432101",
+        "category": "B",
+        "governmentPassword": "xyz987"
+      },
+      "contact": {
+        "email": "joaopdro@email.com",
+        "phoneNumber": "071998765432"
+      },
+      "attachments": [
+        {
+          "fileName": "titulo.pdf",
+          "url": "/doc/titulo.pdf"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullName": "Ana Clara Ferreira Souza",
+      "identification": "4231087654",
+      "identificationState": "MG",
+      "cpf": "03519472682",
+      "birthdate": "2001-02-08",
+      "maritalStatus": "Solteiro(a)",
+      "profession": "Analista de Marketing",
+      "address": {
+        "street": "Rua das Rosas",
+        "houseNumber": "713",
+        "complement": "",
+        "zipCode": "30421010",
+        "neighborhood": "Savassi",
+        "city": "Belo Horizonte",
+        "state": "Minas Gerais"
+      },
+      "license": {
+        "licenseNumber": "98765432109",
+        "category": "C",
+        "governmentPassword": "def456"
+      },
+      "contact": {
+        "email": "anaclara@email.com",
+        "phoneNumber": "031987654320"
+      },
+      "attachments": [
+        {
+          "fileName": "carteira_trabalho.pdf",
+          "url": "/doc/carteira_trabalho.pdf"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fullName": "Victor Hugo da Silva Pereira",
+      "identification": "2146935870",
+      "identificationState": "PR",
+      "cpf": "74823510965",
+      "birthdate": "1978-09-16",
+      "maritalStatus": "Casado(a)",
+      "profession": "Médico(a)",
+      "address": {
+        "street": "Rua dos Andradas",
+        "houseNumber": "102",
+        "complement": "Sala 701",
+        "zipCode": "82510010",
+        "neighborhood": "Batel",
+        "city": "Curitiba",
+        "state": "Paraná"
+      },
+      "license": {
+        "licenseNumber": "87654321098",
+        "category": "AB",
+        "governmentPassword": "ghi789"
+      },
+      "contact": {
+        "email": "victorhugo@email.com",
+        "phoneNumber": "041987654319"
+      },
+      "attachments": [
+        {
+          "fileName": "crm.pdf",
+          "url": "/doc/crm.pdf"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fullName": "Camila Oliveira Santos Almeida",
+      "identification": "3579124680",
+      "identificationState": "RJ",
+      "cpf": "29154063789",
+      "birthdate": "2005-04-29",
+      "maritalStatus": "Solteiro(a)",
+      "profession": "Estudante",
+      "address": {
+        "street": "Rua Copacabana",
+        "houseNumber": "314",
+        "complement": "Apt. 202",
+        "zipCode": "22260010",
+        "neighborhood": "Copacabana",
+        "city": "Rio de Janeiro",
+        "state": "Rio de Janeiro"
+      },
+      "license": {
+        "licenseNumber": "76543210987",
+        "category": "AB",
+        "governmentPassword": "jkl012"
+      },
+      "contact": {
+        "email": "camilaoliveira@email.com",
+        "phoneNumber": "021987654318"
+      },
+      "attachments": []
+    },
+    {
+      "id": 6,
+      "fullName": "Rafael Augusto Gomes Dias",
+      "identification": "1852367094",
+      "identificationState": "SP",
+      "cpf": "63581704293",
+      "birthdate": "1990-11-23",
+      "maritalStatus": "Casado(a)",
+      "profession": "Desenvolvedor de Software",
+      "address": {
+        "street": "Rua Barão de Limeira",
+        "houseNumber": "756",
+        "complement": "",
+        "zipCode": "01411010",
+        "neighborhood": "Itaim Bibi",
+        "city": "São Paulo",
+        "state": "São Paulo"
+      },
+      "license": {
+        "licenseNumber": "65432109876",
+        "category": "B",
+        "governmentPassword": "mno345"
+      },
+      "contact": {
+        "email": "rafaelaugusto@email.com",
+        "phoneNumber": "011987654317"
+      },
+      "attachments": [
+        {
+          "fileName": "diploma.pdf",
+          "url": "/doc/diploma.pdf"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "fullName": "Helena Cristina Souza dos Santos",
+      "identification": "7415902368",
+      "identificationState": "GO",
+      "cpf": "10368527194",
+      "birthdate": "1962-03-15",
+      "maritalStatus": "Divorciada(o)",
+      "profession": "Empresária",
+      "address": {
+        "street": "Rua dos Girassóis",
+        "houseNumber": "410",
+        "complement": "Sala 1001",
+        "zipCode": "74463010",
+        "neighborhood": "Setor Marista",
+        "city": "Goiânia",
+        "state": "Goiás"
+      },
+      "license": {
+        "licenseNumber": "54321098765",
+        "category": "C",
+        "governmentPassword": "pqr678"
+      },
+      "contact": {
+        "email": "helenacristina@email.com",
+        "phoneNumber": "062987654316"
+      },
+      "attachments": [
+        {
+          "fileName": "cnh.pdf",
+          "url": "/doc/cnh.pdf"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "fullName": "Leonardo Miguel Costa Dias",
+      "identification": "5297043618",
+      "identificationState": "PE",
+      "cpf": "86249351078",
+      "birthdate": "2008-01-10",
+      "maritalStatus": "Solteiro(a)",
+      "profession": "Estudante",
+      "address": {
+        "street": "Rua da Praia",
+        "houseNumber": "125",
+        "complement": "Casa 2",
+        "zipCode": "53420010",
+        "neighborhood": "Boa Viagem",
+        "city": "Recife",
+        "state": "Pernambuco"
+      },
+      "license": {
+        "licenseNumber": "43210987654",
+        "category": "",
+        "governmentPassword": "rst901"
+      },
+      "contact": {
+        "email": "leonardomichael@email.com",
+        "phoneNumber": "081987654315"
+      },
+      "attachments": []
+    },
+    {
+      "id": 9,
+      "fullName": "Isabela Vitória Pereira Martins",
+      "identification": "3061489257",
+      "identificationState": "SC",
+      "cpf": "59730286145",
+      "birthdate": "1982-07-07",
+      "maritalStatus": "Casada(o)",
+      "profession": "Professora de Inglês",
+      "address": {
+        "street": "Rua das Acácias",
+        "houseNumber": "938",
+        "complement": "Ap 402",
+        "zipCode": "88040010",
+        "neighborhood": "Floripa",
+        "city": "Florianópolis",
+        "state": "Santa Catarina"
+      },
+      "license": {
+        "licenseNumber": "32109876543",
+        "category": "B",
+        "governmentPassword": "uvw123"
+      },
+      "contact": {
+        "email": "isabelavitoria@email.com",
+        "phoneNumber": "048987654314"
+      },
+      "attachments": [
+        {
+          "fileName": "carteira_professor.pdf",
+          "url": "/doc/carteira_professor.pdf"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "fullName": "Sofia Amanda de Souza Nascimento",
+      "identification": "6832910547",
+      "identificationState": "RS",
+      "cpf": "35917426085",
+      "birthdate": "1997-12-28",
+      "maritalStatus": "Casada(o)",
+      "profession": "Veterinária",
+      "address": {
+        "street": "Rua dos Girassóis",
+        "houseNumber": "817",
+        "complement": "Sala 203",
+        "zipCode": "95140010",
+        "neighborhood": "Centro",
+        "city": "Caxias do Sul",
+        "state": "Rio Grande do Sul"
+      },
+      "license": {
+        "licenseNumber": "10987654321",
+        "category": "C",
+        "governmentPassword": "yza789"
+      },
+      "contact": {
+        "email": "sofiamanda@email.com",
+        "phoneNumber": "054987654312"
+      },
+      "attachments": [
+        {
+          "fileName": "crv.pdf",
+          "url": "/doc/crv.pdf"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "fullName": "Ana Clara Silva",
+      "identification": "8756239053",
+      "identificationState": "SP",
+      "cpf": "98765432109",
+      "birthdate": "1988-08-15",
+      "maritalStatus": "Solteiro(a)",
+      "profession": "Designer Gráfico",
+      "address": {
+        "street": "Rua dos Jardins",
+        "houseNumber": "123",
+        "complement": "Apt. 401",
+        "zipCode": "05432010",
+        "neighborhood": "Jardins",
+        "city": "São Paulo",
+        "state": "São Paulo"
+      },
+      "license": {
+        "licenseNumber": "0987654321",
+        "category": "B",
+        "governmentPassword": "abc123"
+      },
+      "contact": {
+        "email": "anaclarasilva@email.com",
+        "phoneNumber": "011987654310"
+      },
+      "attachments": [
+        {
+          "fileName": "diploma.pdf",
+          "url": "/doc/diplom.pdf"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "fullName": "Victor Santos Ferreira",
+      "identification": "6832999876",
+      "identificationState": "RJ",
+      "cpf": "35791024680",
+      "birthdate": "2002-06-27",
+      "maritalStatus": "Solteiro(a)",
+      "profession": "Estudante Universitário",
+      "address": {
+        "street": "Rua das Acácias",
+        "houseNumber": "678",
+        "complement": "",
+        "zipCode": "22765010",
+        "neighborhood": "Copacabana",
+        "city": "Rio de Janeiro",
+        "state": "Rio de Janeiro"
+      },
+      "license": {
+        "licenseNumber": "54321987654",
+        "category": "B",
+        "governmentPassword": "def456"
+      },
+      "contact": {
+        "email": "victorsantos@email.com",
+        "phoneNumber": "021987654309"
+      },
+      "attachments": []
+    },
+    {
+      "id": 13,
+      "fullName": "Helena Oliveira Costa",
+      "identification": "9824910547",
+      "identificationState": "MG",
+      "cpf": "02836719452",
+      "birthdate": "1970-10-03",
+      "maritalStatus": "Casada(o)",
+      "profession": "Médica",
+      "address": {
+        "street": "Rua da Mata",
+        "houseNumber": "345",
+        "complement": "Sala 802",
+        "zipCode": "31240010",
+        "neighborhood": "Savassi",
+        "city": "Belo Horizonte",
+        "state": "Minas Gerais"
+      },
+      "license": {
+        "licenseNumber": "21098765432",
+        "category": "C",
+        "governmentPassword": "ghi789"
+      },
+      "contact": {
+        "email": "helenaoliveira@email.com",
+        "phoneNumber": "031987654308"
+      },
+      "attachments": [
+        {
+          "fileName": "crm.pdf",
+          "url": "/doc/crm_helenaoliveira.pdf"
+        }
+      ]
+    }
+  ],
+  "traffic-violations": [
+    {
+      "id": 1,
+      "appealId": 1,
+      "driverId": 1,
+      "infringementNotice": "288410/E024320704",
+      "issuer": "Pref. Mun. Santa Maria",
+      "legalBasis": "CTB 218, III",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2023-04-14",
+        "defense": "2023-10-04",
+        "firstInstance": "2023-19-04"
+      },
+      "vehicle": {
+        "plate": "ABC1234",
+        "renavam": "12345678901",
+        "brand": "Chevrolet"
+      },
+      "attachments": [
+        {
+          "fileName": "notificacao.pdf",
+          "url": "/doc/notificacao.pdf"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "appealId": 2,
+      "driverId": 2,
+      "infringementNotice": "543210/E024321234",
+      "issuer": "Detran-RJ",
+      "legalBasis": "CTB 181, XV",
+      "selfSuspensive": false,
+      "deadlines": {
+        "driverPresentation": "2023-05-20",
+        "defense": "2023-05-15",
+        "firstInstance": "2023-05-25"
+      },
+      "vehicle": {
+        "plate": "XYZ5678",
+        "renavam": "23456789012",
+        "brand": "Ford"
+      },
+      "attachments": [
+        {
+          "fileName": "notificacao.pdf",
+          "url": "/doc/notificacao.pdf"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "appealId": 3,
+      "driverId": 3,
+      "infringementNotice": "987654/E024327890",
+      "issuer": "Pref. Mun. Porto Alegre",
+      "legalBasis": "CTB 311, II",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2023-06-22",
+        "defense": "2023-06-15",
+        "firstInstance": "2023-06-25"
+      },
+      "vehicle": {
+        "plate": "GHI3456",
+        "renavam": "45678901234",
+        "brand": "Fiat"
+      },
+      "attachments": [
+        {
+          "fileName": "multa.jpg",
+          "url": "/doc/multa.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "appealId": 4,
+      "driverId": 1,
+      "infringementNotice": "123456/E024329876",
+      "issuer": "Detran-SP",
+      "legalBasis": "CTB 253, I",
+      "selfSuspensive": false,
+      "deadlines": {
+        "driverPresentation": "2023-07-18",
+        "defense": "2023-07-10",
+        "firstInstance": "2023-07-22"
+      },
+      "vehicle": {
+        "plate": "JKL7890",
+        "renavam": "56789012345",
+        "brand": "Toyota"
+      },
+      "attachments": [
+        {
+          "fileName": "aviso.pdf",
+          "url": "/doc/aviso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "appealId": 5,
+      "driverId": 5,
+      "infringementNotice": "789012/E024321234",
+      "issuer": "Pref. Mun. Belo Horizonte",
+      "legalBasis": "CTB 185, I",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2023-08-14",
+        "defense": "2023-08-07",
+        "firstInstance": "2023-08-18"
+      },
+      "vehicle": {
+        "plate": "MNO1234",
+        "renavam": "67890123456",
+        "brand": "Honda"
+      },
+      "attachments": [
+        {
+          "fileName": "comunicado.pdf",
+          "url": "/doc/comunicado.pdf"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "appealId": 6,
+      "driverId": 6,
+      "infringementNotice": "567890/E024328765",
+      "issuer": "Detran-MG",
+      "legalBasis": "CTB 208, III",
+      "selfSuspensive": false,
+      "deadlines": {
+        "driverPresentation": "2023-09-18",
+        "defense": "2023-09-10",
+        "firstInstance": "2023-09-22"
+      },
+      "vehicle": {
+        "plate": "PQR5678",
+        "renavam": "78901234567",
+        "brand": "Hyundai"
+      },
+      "attachments": [
+        {
+          "fileName": "auto.pdf",
+          "url": "/doc/auto.pdf"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "appealId": 7,
+      "driverId": 7,
+      "infringementNotice": "234567/E024325432",
+      "issuer": "Pref. Mun. Curitiba",
+      "legalBasis": "CTB 287, I",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2023-10-14",
+        "defense": "2023-10-07",
+        "firstInstance": "2023-10-19"
+      },
+      "vehicle": {
+        "plate": "STU9012",
+        "renavam": "89012345678",
+        "brand": "Nissan"
+      },
+      "attachments": [
+        {
+          "fileName": "notificacao.pdf",
+          "url": "/doc/notificacao.pdf"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "appealId": 8,
+      "driverId": 8,
+      "infringementNotice": "876543/E024321234",
+      "issuer": "Detran-PR",
+      "legalBasis": "CTB 177, II",
+      "selfSuspensive": false,
+      "deadlines": {
+        "driverPresentation": "2023-11-22",
+        "defense": "2023-11-15",
+        "firstInstance": "2023-11-25"
+      },
+      "vehicle": {
+        "plate": "VWX3456",
+        "renavam": "90123456789",
+        "brand": "Renault"
+      },
+      "attachments": [
+        {
+          "fileName": "aviso.jpg",
+          "url": "/doc/aviso.jpg"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "appealId": 9,
+      "driverId": 9,
+      "infringementNotice": "345678/E024324321",
+      "issuer": "Pref. Mun. Recife",
+      "legalBasis": "CTB 264, I",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2023-12-14",
+        "defense": "2023-12-07",
+        "firstInstance": "2023-12-19"
+      },
+      "vehicle": {
+        "plate": "YZA7890",
+        "renavam": "01234567890",
+        "brand": "Kia"
+      },
+      "attachments": [
+        {
+          "fileName": "notificacao.pdf",
+          "url": "/doc/notificacao.pdf"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "appealId": 10,
+      "driverId": 11,
+      "infringementNotice": "234567/E024323456",
+      "issuer": "Detran-BA",
+      "legalBasis": "CTB 156, III",
+      "selfSuspensive": false,
+      "deadlines": {
+        "driverPresentation": "2024-01-22",
+        "defense": "2024-01-15",
+        "firstInstance": "2024-01-25"
+      },
+      "vehicle": {
+        "plate": "BCD1234",
+        "renavam": "12345678901",
+        "brand": "Mercedes-Benz"
+      },
+      "attachments": [
+        {
+          "fileName": "multa.pdf",
+          "url": "/doc/multa.pdf"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "appealId": 11,
+      "driverId": 12,
+      "infringementNotice": "567890/E024321234",
+      "issuer": "Pref. Mun. Fortaleza",
+      "legalBasis": "CTB 192, I",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2024-02-14",
+        "defense": "2024-02-07",
+        "firstInstance": "2024-02-19"
+      },
+      "vehicle": {
+        "plate": "EFG5678",
+        "renavam": "23456789012",
+        "brand": "BMW"
+      },
+      "attachments": [
+        {
+          "fileName": "comunicado.jpg",
+          "url": "/doc/comunicado.jpg"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "appealId": 12,
+      "driverId": 13,
+      "infringementNotice": "876543/E024322345",
+      "issuer": "Detran-CE",
+      "legalBasis": "CTB 201, II",
+      "selfSuspensive": false,
+      "deadlines": {
+        "driverPresentation": "2024-03-22",
+        "defense": "2024-03-15",
+        "firstInstance": "2024-03-25"
+      },
+      "vehicle": {
+        "plate": "HIJ9012",
+        "renavam": "34567890123",
+        "brand": "Audi"
+      },
+      "attachments": [
+        {
+          "fileName": "aviso.pdf",
+          "url": "/doc/aviso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "appealId": 13,
+      "driverId": 13,
+      "infringementNotice": "987654/E024321234",
+      "issuer": "Pref. Mun. Salvador",
+      "legalBasis": "CTB 185, III",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2024-04-14",
+        "defense": "2024-04-07",
+        "firstInstance": "2024-04-19"
+      },
+      "vehicle": {
+        "plate": "KLM3456",
+        "renavam": "45678901234",
+        "brand": "Volvo"
+      },
+      "attachments": [
+        {
+          "fileName": "notificacao.jpg",
+          "url": "/doc/notificacao.jpg"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "appealId": 14,
+      "driverId": 3,
+      "infringementNotice": "123456/E024322345",
+      "issuer": "Detran-GO",
+      "legalBasis": "CTB 231, I",
+      "selfSuspensive": false,
+      "deadlines": {
+        "driverPresentation": "2024-05-22",
+        "defense": "2024-05-15",
+        "firstInstance": "2024-05-25"
+      },
+      "vehicle": {
+        "plate": "QRS1234",
+        "renavam": "67890123456",
+        "brand": "Land Rover"
+      },
+      "attachments": [
+        {
+          "fileName": "multa.jpg",
+          "url": "/doc/multa.jpg"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "appealId": 15,
+      "driverId": 12,
+      "infringementNotice": "789012/E024321234",
+      "issuer": "Pref. Mun. Brasília",
+      "legalBasis": "CTB 208, II",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2024-06-14",
+        "defense": "2024-06-07",
+        "firstInstance": "2024-06-19"
+      },
+      "vehicle": {
+        "plate": "TUV5678",
+        "renavam": "78901234567",
+        "brand": "Subaru"
+      },
+      "attachments": [
+        {
+          "fileName": "comunicado.pdf",
+          "url": "/doc/comunicado.pdf"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "appealId": 16,
+      "driverId": 1,
+      "infringementNotice": "567890/E024322345",
+      "issuer": "Detran-AM",
+      "legalBasis": "CTB 264, II",
+      "selfSuspensive": false,
+      "deadlines": {
+        "driverPresentation": "2024-07-22",
+        "defense": "2024-07-15",
+        "firstInstance": "2024-07-25"
+      },
+      "vehicle": {
+        "plate": "WXY9012",
+        "renavam": "89012345678",
+        "brand": "Mitsubishi"
+      },
+      "attachments": [
+        {
+          "fileName": "aviso.pdf",
+          "url": "/doc/aviso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "appealId": null,
+      "driverId": 3,
+      "infringementNotice": "234567/E024321234",
+      "issuer": "Pref. Mun. Manaus",
+      "legalBasis": "CTB 185, II",
+      "selfSuspensive": true,
+      "deadlines": {
+        "driverPresentation": "2024-08-14",
+        "defense": "2024-08-07",
+        "firstInstance": "2024-08-19"
+      },
+      "vehicle": {
+        "plate": "ZAB3456",
+        "renavam": "90123456789",
+        "brand": "Peugeot"
+      },
+      "attachments": [
+        {
+          "fileName": "notificacao.jpg",
+          "url": "/doc/notificacao.jpg"
+        }
+      ]
+    }
+  ],
+  "appeals": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "code": "202311001",
+      "statusGroup": "liberado",
+      "status": "liberado",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 2500.1,
+      "paymentType": "Dinheiro",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "employeeId": 2,
+      "code": "202311002",
+      "statusGroup": "administrativo",
+      "status": "nait",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 2500.1,
+      "paymentType": "Boleto",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "employeeId": 3,
+      "code": "202311003",
+      "statusGroup": "administrativo",
+      "status": "nip",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 1200.8,
+      "paymentType": "Pix",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "employeeId": 4,
+      "code": "202311004",
+      "statusGroup": "administrativo",
+      "status": "cetran",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 500,
+      "paymentType": "Cartão de Crédito",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "employeeId": 1,
+      "code": "202311005",
+      "statusGroup": "judicial",
+      "status": "instauração",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 500,
+      "paymentType": "Cartão de Débito",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "employeeId": 2,
+      "code": "202311006",
+      "statusGroup": "judicial",
+      "status": "imposição",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 4000,
+      "paymentType": "Transferência Bancária",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "employeeId": 3,
+      "code": "202311007",
+      "statusGroup": "judicial",
+      "status": "cetran",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 600.6,
+      "paymentType": "Outro",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "employeeId": 4,
+      "code": "202311008",
+      "statusGroup": "juridico",
+      "status": "ajuizar",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 100,
+      "paymentType": "Dinheiro",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "employeeId": 1,
+      "code": "202311009",
+      "statusGroup": "juridico",
+      "status": "ajuizado",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 300,
+      "paymentType": "Boleto",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "employeeId": 2,
+      "code": "202311010",
+      "statusGroup": "juridico",
+      "status": "recorrer",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 2500,
+      "paymentType": "Pix",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "employeeId": 3,
+      "code": "202311011",
+      "statusGroup": "juridico",
+      "status": "tutela concedida",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 2500.1,
+      "paymentType": "Cartão de Crédito",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "employeeId": 4,
+      "code": "202311012",
+      "statusGroup": "judicial",
+      "status": "imposição",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 0,
+      "paymentType": "Cartão de Débito",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "employeeId": 1,
+      "code": "202311013",
+      "statusGroup": "administrativo",
+      "status": "nip",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 2000,
+      "paymentType": "Transferência Bancária",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "employeeId": 2,
+      "code": "202311014",
+      "statusGroup": "liberado",
+      "status": "liberado",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 1300,
+      "paymentType": "Outro",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "employeeId": 3,
+      "code": "202311015",
+      "statusGroup": "judicial",
+      "status": "instauração",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 1000,
+      "paymentType": "Dinheiro",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "employeeId": 4,
+      "code": "202311016",
+      "statusGroup": "juridico",
+      "status": "tutela concedida",
+      "service": "Suspensiva Exc. Veloc. 50%",
+      "cost": 200,
+      "paymentType": "Boleto",
+      "deadline": "2023-10-04",
+      "observation": "Utilizar artigo X para defesa",
+      "attachments": [
+        {
+          "fileName": "recurso.pdf",
+          "url": "/doc/recurso.pdf"
+        }
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "fullName": "Colaborador A",
+      "role": "comum"
+    },
+    {
+      "id": 2,
+      "fullName": "Colaborador B",
+      "role": "comum"
+    },
+    {
+      "id": 3,
+      "fullName": "Colaborador C",
+      "role": "admin"
+    },
+    {
+      "id": 4,
+      "fullName": "Colaborador D",
+      "role": "comum"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-export default interface IAttachment {
+export interface Attachment {
   fileName: string;
   url: string;
 }

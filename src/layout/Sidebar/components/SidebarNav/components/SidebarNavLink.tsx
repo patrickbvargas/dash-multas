@@ -8,7 +8,6 @@ export interface SidebarNavLinkProps extends React.HTMLAttributes<HTMLAnchorElem
   label: string;
 }
 
-// TODO: create animation to opened/closed sidebar
 const SidebarNavLink = ({
   to = "",
   icon = null,
@@ -25,7 +24,7 @@ const SidebarNavLink = ({
       )}
       {...props}
     >
-      <div className="h-6 w-6">{icon}</div>
+      <div className="w-6">{icon}</div>
       <p className="text-sm font-normal transition-opacity duration-300 group-[.is-collapsed]/sidebar:pointer-events-none group-[.is-collapsed]/sidebar:opacity-0">
         {label}
       </p>

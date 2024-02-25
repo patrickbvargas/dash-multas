@@ -1,9 +1,9 @@
 import { cn } from "@utils";
 import React from "react";
 
-interface cardRootProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface CardRootProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-const CardRoot = ({ className = "", ...props }: cardRootProps) => {
+const CardRoot = ({ className = "", ...props }: CardRootProps) => {
   return (
     <div
       className={cn(

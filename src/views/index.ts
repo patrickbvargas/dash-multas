@@ -1,21 +1,19 @@
 import Dashboard from "./Dashboard/Dashboard";
 import Calendar from "./Calendar/Calendar";
 import AppealList from "./AppealList/AppealList";
-import AppealInfo from "./AppealInfo/AppealInfo";
+import AppealDetails from "./AppealDetails/AppealDetails";
 import DriverList from "./DriverList/DriverList";
-import DriverInfo from "./DriverInfo/DriverInfo";
+import DriverDetails from "./DriverDetails/DriverDetails";
 import TrafficViolationList from "./TrafficViolationList/TrafficViolationList";
-import TrafficViolationInfo from "./TrafficViolationInfo/TrafficViolationInfo";
-import NotFound from "./NotFound/NotFound";
+import TrafficViolationInfo from "./TrafficViolationDetails/TrafficViolationDetails";
 
 export {
   Dashboard,
   Calendar,
   AppealList,
-  AppealInfo,
+  AppealDetails,
   DriverList,
-  DriverInfo,
+  DriverDetails,
   TrafficViolationList,
   TrafficViolationInfo,
-  NotFound,
 };

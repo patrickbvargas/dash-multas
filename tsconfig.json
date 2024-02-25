@@ -11,6 +11,8 @@
       "@types": ["src/types"],
       "@contexts": ["src/contexts"],
       "@services": ["src/services"],
+      "@environment": ["src/env"],
+      "@assets": ["src/assets"],
       "@icons/solid": ["src/assets/icons/solid"],
       "@icons/outline": ["src/assets/icons/outline"],
       "@icons/mini": ["src/assets/icons/mini"]

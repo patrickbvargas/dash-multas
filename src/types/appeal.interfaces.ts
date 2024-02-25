@@ -1,8 +1,8 @@
-import { IAttachment, IEmployee, ITrafficViolation } from "@types";
+import { Attachment, Driver, Employee, TrafficViolation } from "@types";
 
-type TStatusGroup = "liberado" | "administrativo" | "judicial" | "juridico";
+export type AppealStatusGroup = "liberado" | "administrativo" | "judicial" | "juridico";
 
-type TStatus =
+export type AppealStatus =
   | "liberado"
   | "nait"
   | "nip"
@@ -14,7 +14,7 @@ type TStatus =
   | "recorrer"
   | "tutela concedida";
 
-type TPaymentType =
+type PaymentType =
   | "Dinheiro"
   | "Boleto"
   | "Pix"
@@ -23,32 +23,23 @@ type TPaymentType =
   | "Transferência Bancária"
   | "Outro";
 
-export interface IAppeal {
-  id: number;
+export interface Appeal {
+  id: string;
+  employeeId: string;
   code: string;
-  statusGroup: TStatusGroup;
-  status: TStatus;
-  employee: IEmployee;
+  statusGroup: AppealStatusGroup;
+  status: AppealStatus;
   service: string;
   cost: number;
-  paymentType: TPaymentType;
+  paymentType: PaymentType;
   deadline: string;
   observation?: string;
-  trafficViolations: Pick<ITrafficViolation, "id" | "infringementNotice" | "selfSuspensive" | "driver">[];
-  attachments?: IAttachment[];
+  attachments?: Attachment[];
 }
 
-export interface IAppealList {
-  id: number;
-  code: string;
-  statusGroup: TStatusGroup;
-  status: TStatus;
-  isPriority: boolean;
-  driver: {
-    fullName: string;
-  };
-  employee: {
-    fullName: string;
-  };
-  deadline: string;
+export interface AppealDetailed {
+  appeal: Appeal;
+  trafficViolation: TrafficViolation;
+  driver: Driver;
+  employee: Employee;
 }

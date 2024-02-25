@@ -1,8 +1,8 @@
-import { IAttachment } from "@types";
+import { Attachment, TrafficViolation } from "@types";
 
-interface IAddress {
+export interface Address {
   street: string;
-  number: string;
+  houseNumber: string;
   complement: string;
   zipCode: string;
   neighborhood: string;
@@ -10,21 +10,19 @@ interface IAddress {
   state: string;
 }
 
-// TODO: include tipo
-interface ILicense {
+export interface License {
   licenseNumber: string;
   category: string;
   governmentPassword: string;
-  // Tipo [Física | Digital]
 }
 
-interface IContact {
+export interface Contact {
   email: string;
   phoneNumber: string;
 }
 
-export interface IDriver {
-  id: number;
+export interface Driver {
+  id: string;
   fullName: string;
   identification: string;
   identificationState: string;
@@ -32,19 +30,13 @@ export interface IDriver {
   birthdate: string;
   maritalStatus: string;
   profession: string;
-  // trafficViolations: TrafficViolation[];
-  trafficViolationsCount: number;
-  address: IAddress;
-  license: ILicense;
-  contact: IContact;
-  attachments?: IAttachment[];
+  address: Address;
+  license: License;
+  contact: Contact;
+  attachments?: Attachment[];
 }
 
-export interface IDriverList {
-  id: number;
-  fullName: string;
-  cpf: string;
-  licenseNumber: string;
-  isPriority: boolean;
-  trafficViolationsCount: number;
+export interface DriverDetailed {
+  driver: Driver;
+  trafficViolations: TrafficViolation[] | null;
 }

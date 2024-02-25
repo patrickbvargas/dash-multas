@@ -1,4 +1,4 @@
-export function convertDateFormat(inputDate: string) {
+export function convertDateToLocaleFormat(inputDate: string) {
   try {
     const dateSplited = inputDate.split("-");
     return `${dateSplited[2]}/${dateSplited[1]}/${dateSplited[0]}`;

@@ -1,6 +1,6 @@
 import React from "react";
-import { cn } from "@utils";
 import { VariantProps, cva } from "class-variance-authority";
+import { cn } from "@utils";
 
 const controlActionVariants = cva("text-gray-400 dark:text-black-200", {
   variants: {
@@ -10,8 +10,8 @@ const controlActionVariants = cva("text-gray-400 dark:text-black-200", {
       delete: "hover:text-red-400 dark:hover:text-red-400",
     },
     size: {
-      default: "h-5 w-5",
-      large: "h-6 w-6",
+      default: "h-5",
+      large: "h-6",
     },
   },
 });
@@ -30,7 +30,10 @@ const ControlAction = ({
   ...props
 }: ControlActionProps) => {
   return (
-    <button className={cn(controlActionVariants({ variant, size }), className)} {...props}>
+    <button
+      className={cn("transition duration-300", controlActionVariants({ variant, size }), className)}
+      {...props}
+    >
       {icon}
     </button>
   );
