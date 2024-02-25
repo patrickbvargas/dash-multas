@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Button } from "@components";
+import { Button, ThemeSwitcher } from "@components";
 import { PlusIcon } from "@icons/mini";
 import { useAppContext } from "@contexts";
 
@@ -72,7 +72,10 @@ const Header = ({ className = "", ...props }: HeaderProps) => {
       <h1 className="max-w-full truncate text-2xl font-normal uppercase tracking-wider text-gray-600 dark:text-black-50">
         {pageTitle}
       </h1>
-      <Button label="Criar" icon={<PlusIcon className="h-5" />} type="startIcon" onClick={handleClick} />
+      <div className="flex gap-2">
+        <ThemeSwitcher />
+        <Button label="Criar" icon={<PlusIcon className="h-5" />} type="startIcon" onClick={handleClick} />
+      </div>
     </header>
   );
 };

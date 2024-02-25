@@ -4,7 +4,6 @@ import SidebarNav from "./components/SidebarNav/SidebarNav";
 import SidebarControl from "./components/SidebarControl";
 import { cn } from "@utils";
 import { useLocalStorage } from "@hooks";
-import { ThemeSwitcher } from "@components";
 import { useAppContext } from "@contexts";
 
 interface SidebarProps extends React.HTMLAttributes<HTMLElement> {}
@@ -39,7 +38,7 @@ const Sidebar = ({ className = "", ...props }: SidebarProps) => {
     >
       <SidebarLogo />
       <SidebarNav />
-      <ThemeSwitcher />
+
       <SidebarControl setIsCollapsed={setIsCollapsed} />
     </aside>
   );
