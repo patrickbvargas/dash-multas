@@ -11,7 +11,7 @@ interface HeadingProps extends React.HTMLAttributes<HTMLDivElement> {
 // TODO: refatore
 const Heading = ({ title = "", linkTo = null, className = "", ...props }: HeadingProps) => {
   return (
-    <Link to={linkTo || ""} target={linkTo ? "_blank" : ""}>
+    <Link to={linkTo || ""} target={linkTo ? "_blank" : ""} rel="noopener noreferrer">
       <div
         className={cn("group inline-flex max-w-full cursor-pointer items-center gap-2.5", className)}
         {...props}
