@@ -11,11 +11,10 @@ export function getFirestoreUtils() {
       const dataCollection = collection(db, collectionName);
       const dataSnapshot = await getDocs(dataCollection);
       if (!dataSnapshot) return null;
-      const data = dataSnapshot.docs.map((doc) => {
+      return dataSnapshot.docs.map((doc) => {
         const docData = doc.data();
         return { ...docData, id: doc.id };
       });
-      return data;
     } catch (error) {
       console.error(error);
       throw error;
@@ -27,11 +26,10 @@ export function getFirestoreUtils() {
       const dataReference = doc(db, collectionName, id);
       const dataSnapshot = await getDoc(dataReference);
       if (!dataSnapshot) return null;
-      const data = {
+      return {
         ...dataSnapshot.data(),
         id: dataSnapshot.id,
       };
-      return data;
     } catch (error) {
       console.error(error);
       throw error;
@@ -48,11 +46,10 @@ export function getFirestoreUtils() {
       const dataQuery = query(dataCollection, where(queryField, "==", queryValue));
       const dataSnapshot = await getDocs(dataQuery);
       if (!dataSnapshot) return null;
-      const data = dataSnapshot.docs.map((doc) => {
+      return dataSnapshot.docs.map((doc) => {
         const docData = doc.data();
         return { ...docData, id: doc.id };
       });
-      return data;
     } catch (error) {
       console.error(error);
       throw error;

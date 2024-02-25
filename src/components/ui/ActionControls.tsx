@@ -1,3 +1,4 @@
+import React from "react";
 import Control from "../Control/Control";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 

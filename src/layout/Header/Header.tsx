@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Button, ThemeSwitcher } from "@components";
 import { PlusIcon } from "@icons/mini";
 import { useAppContext } from "@contexts";
+import { cn } from "@utils";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -66,7 +67,10 @@ const Header = ({ className = "", ...props }: HeaderProps) => {
 
   return (
     <header
-      className="flex flex-col items-center justify-between gap-4 overflow-hidden px-2 pb-2 pt-4 sm:flex-row sm:px-8 sm:pb-4 sm:pt-8"
+      className={cn(
+        "flex flex-col items-center justify-between gap-4 overflow-hidden px-2 pb-2 pt-4 sm:flex-row sm:px-8 sm:pb-4 sm:pt-8",
+        className,
+      )}
       {...props}
     >
       <h1 className="max-w-full truncate text-2xl font-normal uppercase tracking-wider text-gray-600 dark:text-black-50">

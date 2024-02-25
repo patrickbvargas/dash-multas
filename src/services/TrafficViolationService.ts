@@ -6,8 +6,7 @@ export const fetchTrafficViolations = async (): Promise<TrafficViolation[] | nul
   try {
     const fb = getFirestoreUtils();
     const data = await fb.fetchAllDocs(fb.collectionNames.trafficViolations);
-    const validData = Array.isArray(data) ? data.filter(isTrafficViolationData) : null;
-    return validData;
+    return Array.isArray(data) ? data.filter(isTrafficViolationData) : null;
   } catch (error) {
     console.error(error);
     throw error;
@@ -21,8 +20,7 @@ export const fetchTrafficViolationsByDriverId = async (
     if (!driverId) throw new Error("Invalid driverId");
     const fb = getFirestoreUtils();
     const data = await fb.fetchDocsByQuery(fb.collectionNames.trafficViolations, "driverId", driverId);
-    const validData = Array.isArray(data) ? data.filter(isTrafficViolationData) : null;
-    return validData;
+    return Array.isArray(data) ? data.filter(isTrafficViolationData) : null;
   } catch (error) {
     console.error(error);
     throw error;
@@ -34,8 +32,7 @@ export const fetchTrafficViolationByAppealId = async (appealId: string): Promise
     if (!appealId) throw new Error("Invalid appealId");
     const fb = getFirestoreUtils();
     const data = await fb.fetchDocsByQuery(fb.collectionNames.trafficViolations, "appealId", appealId);
-    const validData = Array.isArray(data) ? data.filter(isTrafficViolationData)[0] : null; //TODO: refatore
-    return validData;
+    return Array.isArray(data) ? data.filter(isTrafficViolationData)[0] : null; //TODO: refatore
   } catch (error) {
     console.error(error);
     throw error;
@@ -49,8 +46,7 @@ export const fetchTrafficViolationById = async (
     if (!trafficViolationId) throw new Error("Invalid trafficViolationId");
     const fb = getFirestoreUtils();
     const data = await fb.fetchDocById(fb.collectionNames.trafficViolations, trafficViolationId);
-    const validData = isTrafficViolationData(data) ? data : null;
-    return validData;
+    return isTrafficViolationData(data) ? data : null;
   } catch (error) {
     console.error(error);
     throw error;
@@ -68,8 +64,7 @@ export const fetchTrafficViolationsDetails = async (): Promise<TrafficViolationD
       return await fetchTrafficViolationsDetailsById(trafficViolation.id);
     });
     const dataResolves = await Promise.all(dataPromises);
-    const validData = dataResolves.filter(isTrafficViolationDetailedData);
-    return validData;
+    return dataResolves.filter(isTrafficViolationDetailedData);
   } catch (error) {
     console.error(error);
     throw error;

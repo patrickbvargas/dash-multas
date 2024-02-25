@@ -14,5 +14,3 @@ export function usePageTitle(pageTitle: string): TitleOutput {
 
   return { title, setTitle };
 }
-
-export default usePageTitle;

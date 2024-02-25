@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import SidebarLogo from "./components/SidebarLogo";
 import SidebarNav from "./components/SidebarNav/SidebarNav";
 import SidebarControl from "./components/SidebarControl";
@@ -12,7 +12,7 @@ const Sidebar = ({ className = "", ...props }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useLocalStorage("sidebar-collapsed", false);
   const { showNotification } = useAppContext();
 
-  const handleCollapse = () => {
+  const handleCollapse = useCallback(() => {
     if (window.matchMedia("(max-width: 600px").matches) {
       showNotification(
         "Para uma experiência mais completa, recomendamos utilizar um computador para navegar.",
@@ -20,7 +20,7 @@ const Sidebar = ({ className = "", ...props }: SidebarProps) => {
       );
       setIsCollapsed(true);
     }
-  };
+  }, [setIsCollapsed, showNotification]);
 
   React.useEffect(() => {
     window.addEventListener("resize", handleCollapse);

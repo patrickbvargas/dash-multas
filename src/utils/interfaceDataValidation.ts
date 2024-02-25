@@ -13,8 +13,8 @@ import {
   AppealDetailed,
 } from "@types";
 
-export const isDriverDetailedData = (data: any): data is DriverDetailed => {
-  if (isDriverData(data.driver)) {
+export const isDriverDetailedData = (data: unknown): data is DriverDetailed => {
+  if (data && typeof data === "object" && "driver" in data && isDriverData(data.driver)) {
     return true;
   } else {
     console.warn("Data not recognized as DriverDetailed interface.", data);
@@ -22,8 +22,15 @@ export const isDriverDetailedData = (data: any): data is DriverDetailed => {
   }
 };
 
-export const isTrafficViolationDetailedData = (data: any): data is TrafficViolationDetailed => {
-  if (isTrafficViolationData(data.trafficViolation) && isDriverData(data.driver)) {
+export const isTrafficViolationDetailedData = (data: unknown): data is TrafficViolationDetailed => {
+  if (
+    data &&
+    typeof data === "object" &&
+    "trafficViolation" in data &&
+    "driver" in data &&
+    isTrafficViolationData(data.trafficViolation) &&
+    isDriverData(data.driver)
+  ) {
     return true;
   } else {
     console.warn("Data not recognized as TrafficViolationDetailed interface.", data);
@@ -31,8 +38,14 @@ export const isTrafficViolationDetailedData = (data: any): data is TrafficViolat
   }
 };
 
-export const isAppealDetailedData = (data: any): data is AppealDetailed => {
+export const isAppealDetailedData = (data: unknown): data is AppealDetailed => {
   if (
+    data &&
+    typeof data === "object" &&
+    "appeal" in data &&
+    "trafficViolation" in data &&
+    "driver" in data &&
+    "employee" in data &&
     isAppealData(data.appeal) &&
     isTrafficViolationData(data.trafficViolation) &&
     isDriverData(data.driver) &&
@@ -45,9 +58,21 @@ export const isAppealDetailedData = (data: any): data is AppealDetailed => {
   }
 };
 
-export const isDriverData = (data: any): data is Driver => {
+export const isDriverData = (data: unknown): data is Driver => {
   if (
+    data &&
     typeof data === "object" &&
+    "id" in data &&
+    "fullName" in data &&
+    "identification" in data &&
+    "identificationState" in data &&
+    "cpf" in data &&
+    "birthdate" in data &&
+    "maritalStatus" in data &&
+    "profession" in data &&
+    "address" in data &&
+    "license" in data &&
+    "contact" in data &&
     typeof data.id === "string" &&
     typeof data.fullName === "string" &&
     typeof data.identification === "string" &&
@@ -67,9 +92,17 @@ export const isDriverData = (data: any): data is Driver => {
   }
 };
 
-const isAddressData = (data: any): data is Address => {
+const isAddressData = (data: unknown): data is Address => {
   if (
+    data &&
     typeof data === "object" &&
+    "street" in data &&
+    "houseNumber" in data &&
+    "complement" in data &&
+    "zipCode" in data &&
+    "neighborhood" in data &&
+    "city" in data &&
+    "state" in data &&
     typeof data.street === "string" &&
     typeof data.houseNumber === "string" &&
     typeof data.complement === "string" &&
@@ -85,9 +118,13 @@ const isAddressData = (data: any): data is Address => {
   }
 };
 
-const isLicenseData = (data: any): data is License => {
+const isLicenseData = (data: unknown): data is License => {
   if (
+    data &&
     typeof data === "object" &&
+    "licenseNumber" in data &&
+    "category" in data &&
+    "governmentPassword" in data &&
     typeof data.licenseNumber === "string" &&
     typeof data.category === "string" &&
     typeof data.governmentPassword === "string"
@@ -99,8 +136,15 @@ const isLicenseData = (data: any): data is License => {
   }
 };
 
-const isContactData = (data: any): data is Contact => {
-  if (typeof data === "object" && typeof data.email === "string" && typeof data.phoneNumber === "string") {
+const isContactData = (data: unknown): data is Contact => {
+  if (
+    data &&
+    typeof data === "object" &&
+    "email" in data &&
+    "phoneNumber" in data &&
+    typeof data.email === "string" &&
+    typeof data.phoneNumber === "string"
+  ) {
     return true;
   } else {
     console.warn("Data not recognized as Contact interface.", data);
@@ -108,9 +152,18 @@ const isContactData = (data: any): data is Contact => {
   }
 };
 
-export const isTrafficViolationData = (data: any): data is TrafficViolation => {
+export const isTrafficViolationData = (data: unknown): data is TrafficViolation => {
   if (
+    data &&
     typeof data === "object" &&
+    "id" in data &&
+    "driverId" in data &&
+    "infringementNotice" in data &&
+    "issuer" in data &&
+    "legalBasis" in data &&
+    "selfSuspensive" in data &&
+    "deadlines" in data &&
+    "vehicle" in data &&
     typeof data.id === "string" &&
     typeof data.driverId === "string" &&
     typeof data.infringementNotice === "string" &&
@@ -127,9 +180,13 @@ export const isTrafficViolationData = (data: any): data is TrafficViolation => {
   }
 };
 
-const isVehicleData = (data: any): data is Vehicle => {
+const isVehicleData = (data: unknown): data is Vehicle => {
   if (
+    data &&
     typeof data === "object" &&
+    "plate" in data &&
+    "renavam" in data &&
+    "brand" in data &&
     typeof data.plate === "string" &&
     typeof data.renavam === "string" &&
     typeof data.brand === "string"
@@ -141,9 +198,13 @@ const isVehicleData = (data: any): data is Vehicle => {
   }
 };
 
-const isDeadlinesData = (data: any): data is Deadlines => {
+const isDeadlinesData = (data: unknown): data is Deadlines => {
   if (
+    data &&
     typeof data === "object" &&
+    "driverPresentation" in data &&
+    "defense" in data &&
+    "firstInstance" in data &&
     typeof data.driverPresentation === "string" &&
     typeof data.defense === "string" &&
     typeof data.firstInstance === "string"
@@ -155,9 +216,19 @@ const isDeadlinesData = (data: any): data is Deadlines => {
   }
 };
 
-export const isAppealData = (data: any): data is Appeal => {
+export const isAppealData = (data: unknown): data is Appeal => {
   if (
+    data &&
     typeof data === "object" &&
+    "id" in data &&
+    "employeeId" in data &&
+    "code" in data &&
+    "statusGroup" in data &&
+    "status" in data &&
+    "service" in data &&
+    "cost" in data &&
+    "paymentType" in data &&
+    "deadline" in data &&
     typeof data.id === "string" &&
     typeof data.employeeId === "string" &&
     typeof data.code === "string" &&
@@ -175,9 +246,13 @@ export const isAppealData = (data: any): data is Appeal => {
   }
 };
 
-export const isEmployeeData = (data: any): data is Employee => {
+export const isEmployeeData = (data: unknown): data is Employee => {
   if (
+    data &&
     typeof data === "object" &&
+    "id" in data &&
+    "fullName" in data &&
+    "role" in data &&
     typeof data.id === "string" &&
     typeof data.fullName === "string" &&
     typeof data.role === "string"

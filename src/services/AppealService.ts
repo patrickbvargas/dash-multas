@@ -8,8 +8,7 @@ export const fetchAppeals = async (statusGroup: AppealStatusGroup | null): Promi
     const data = statusGroup
       ? await fb.fetchDocsByQuery(fb.collectionNames.appeals, "statusGroup", statusGroup)
       : await fb.fetchAllDocs(fb.collectionNames.appeals);
-    const validData = Array.isArray(data) ? data.filter(isAppealData) : null;
-    return validData;
+    return Array.isArray(data) ? data.filter(isAppealData) : null;
   } catch (error) {
     console.error(error);
     throw error;
@@ -21,8 +20,7 @@ export const fetchAppealById = async (appealId: string): Promise<Appeal | null> 
     if (!appealId) throw new Error("Invalid appealId");
     const fb = getFirestoreUtils();
     const data = await fb.fetchDocById(fb.collectionNames.appeals, appealId);
-    const validData = isAppealData(data) ? data : null;
-    return validData;
+    return isAppealData(data) ? data : null;
   } catch (error) {
     console.error(error);
     throw error;
@@ -42,8 +40,7 @@ export const fetchAppealsDetails = async (
       return await fetchAppealDetailsById(appeal.id);
     });
     const dataResolves = await Promise.all(dataPromises);
-    const validData = dataResolves.filter(isAppealDetailedData);
-    return validData;
+    return dataResolves.filter(isAppealDetailedData);
   } catch (error) {
     console.error(error);
     throw error;

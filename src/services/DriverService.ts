@@ -6,29 +6,23 @@ export const fetchDrivers = async (): Promise<Driver[] | null> => {
   try {
     const fb = getFirestoreUtils();
     const data = await fb.fetchAllDocs(fb.collectionNames.drivers);
-    const validData = Array.isArray(data) ? data.filter(isDriverData) : null;
-    return validData;
+    return Array.isArray(data) ? data.filter(isDriverData) : null;
   } catch (error) {
     console.error(error);
     throw error;
   }
 };
-
 export const fetchDriverById = async (driverId: string): Promise<Driver | null> => {
   try {
     if (!driverId) throw new Error("Invalid driverId");
     const fb = getFirestoreUtils();
     const data = await fb.fetchDocById(fb.collectionNames.drivers, driverId);
-    const validData = isDriverData(data) ? data : null;
-    return validData;
+    return isDriverData(data) ? data : null;
   } catch (error) {
     console.error(error);
     throw error;
   }
 };
-
-// ? ---------------------------------
-
 export const fetchDriversDetails = async (): Promise<DriverDetailed[] | null> => {
   try {
     const drivers = await fetchDrivers();
@@ -38,8 +32,7 @@ export const fetchDriversDetails = async (): Promise<DriverDetailed[] | null> =>
       return await fetchDriverDetailsById(driver.id);
     });
     const dataResolves = await Promise.all(dataPromises);
-    const validData = dataResolves.filter(isDriverDetailedData);
-    return validData;
+    return dataResolves.filter(isDriverDetailedData);
   } catch (error) {
     console.error(error);
     throw error;

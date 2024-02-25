@@ -21,6 +21,7 @@ const DetailsPageWrapper = ({
   React.useEffect(() => {
     setPageTitle(pageTitle);
   }, [pageTitle]);
+
   return (
     <section className="flex h-full max-w-full flex-col gap-6 rounded-lg bg-white p-4 dark:bg-black-700 sm:px-6 sm:py-5">
       {pageTag ? <div>{pageTag}</div> : null}
