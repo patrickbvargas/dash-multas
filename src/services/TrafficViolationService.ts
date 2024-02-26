@@ -1,6 +1,6 @@
 import { TrafficViolation, TrafficViolationDetailed } from "@types";
 import { fetchAppealById, fetchDriverById } from "@services";
-import { getFirestoreUtils, isTrafficViolationData, isTrafficViolationDetailedData } from "@utils";
+import { getFirestoreUtils, isTrafficViolationData } from "@utils";
 
 export const fetchTrafficViolations = async (): Promise<TrafficViolation[] | null> => {
   try {
@@ -52,33 +52,6 @@ export const fetchTrafficViolationById = async (
     throw error;
   }
 };
-
-// ? ---------------------------------
-
-// export const fetchTrafficViolationsDetails = async (): Promise<TrafficViolationDetailed[] | null> => {
-//   try {
-//     const trafficViolations = await fetchTrafficViolations();
-//     if (!trafficViolations) return null;
-
-//     const dataPromises = trafficViolations.map(async (trafficViolation) => {
-//       const driver = await fetchDriverById(trafficViolation.driverId);
-//       if (!driver) throw new Error(`Driver ${trafficViolation.driverId} not found.`);
-
-//       const appeal = trafficViolation.appealId ? await fetchAppealById(trafficViolation.appealId) : null;
-
-//       return {
-//         trafficViolation,
-//         driver,
-//         appeal,
-//       };
-//     });
-//     const dataResolves = await Promise.all(dataPromises);
-//     return dataResolves.filter(isTrafficViolationDetailedData);
-//   } catch (error) {
-//     console.error(error);
-//     throw error;
-//   }
-// };
 
 export const fetchTrafficViolationDetails = async (
   trafficViolation: TrafficViolation,

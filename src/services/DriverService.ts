@@ -1,6 +1,6 @@
 import { Driver, DriverDetailed } from "@types";
 import { fetchTrafficViolationsByDriverId } from "@services";
-import { getFirestoreUtils, isDriverData, isDriverDetailedData } from "@utils";
+import { getFirestoreUtils, isDriverData } from "@utils";
 
 export const fetchDrivers = async (): Promise<Driver[] | null> => {
   try {
@@ -23,29 +23,6 @@ export const fetchDriverById = async (driverId: string): Promise<Driver | null> 
     throw error;
   }
 };
-
-// ? ---------------------------------
-
-// export const fetchDriversDetails = async (): Promise<DriverDetailed[] | null> => {
-//   try {
-//     const drivers = await fetchDrivers();
-//     if (!drivers) return null;
-
-//     const dataPromises = drivers.map(async (driver) => {
-//       const trafficViolations = await fetchTrafficViolationsByDriverId(driver.id);
-
-//       return {
-//         driver,
-//         trafficViolations,
-//       };
-//     });
-//     const dataResolves = await Promise.all(dataPromises);
-//     return dataResolves.filter(isDriverDetailedData);
-//   } catch (error) {
-//     console.error(error);
-//     throw error;
-//   }
-// };
 
 export const fetchDriverDetails = async (driver: Driver): Promise<DriverDetailed> => {
   try {
