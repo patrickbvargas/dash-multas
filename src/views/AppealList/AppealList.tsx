@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { Card, CardList, Loading, EmptyData, Tag, Error } from "@components";
-import { fetchAppealsDetails } from "@services";
 import { convertDateToLocaleFormat } from "@utils";
-import { useQuery } from "react-query";
 import { useAppContext } from "@contexts";
 import { AppealStatusGroup } from "@types";
+import { useAppealList } from "@hooks";
 
 interface AppealListProps {
   statusGroup?: AppealStatusGroup | null;
@@ -12,11 +11,7 @@ interface AppealListProps {
 
 const AppealList = ({ statusGroup = null }: AppealListProps) => {
   const { showNotification } = useAppContext();
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["get-appeals", statusGroup],
-    queryFn: () => fetchAppealsDetails(statusGroup),
-  });
+  const { data, isLoading, isError } = useAppealList(statusGroup);
 
   const handleEditAction = (id: string) => {
     showNotification(

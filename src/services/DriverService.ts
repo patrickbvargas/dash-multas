@@ -23,31 +23,52 @@ export const fetchDriverById = async (driverId: string): Promise<Driver | null> 
     throw error;
   }
 };
-export const fetchDriversDetails = async (): Promise<DriverDetailed[] | null> => {
-  try {
-    const drivers = await fetchDrivers();
-    if (!drivers) return null;
 
-    const dataPromises = drivers.map(async (driver) => {
-      return await fetchDriverDetailsById(driver.id);
-    });
-    const dataResolves = await Promise.all(dataPromises);
-    return dataResolves.filter(isDriverDetailedData);
+// ? ---------------------------------
+
+// export const fetchDriversDetails = async (): Promise<DriverDetailed[] | null> => {
+//   try {
+//     const drivers = await fetchDrivers();
+//     if (!drivers) return null;
+
+//     const dataPromises = drivers.map(async (driver) => {
+//       const trafficViolations = await fetchTrafficViolationsByDriverId(driver.id);
+
+//       return {
+//         driver,
+//         trafficViolations,
+//       };
+//     });
+//     const dataResolves = await Promise.all(dataPromises);
+//     return dataResolves.filter(isDriverDetailedData);
+//   } catch (error) {
+//     console.error(error);
+//     throw error;
+//   }
+// };
+
+export const fetchDriverDetails = async (driver: Driver): Promise<DriverDetailed> => {
+  try {
+    const trafficViolations = await fetchTrafficViolationsByDriverId(driver.id);
+    return {
+      driver,
+      trafficViolations,
+    };
   } catch (error) {
     console.error(error);
     throw error;
   }
 };
 
-export const fetchDriverDetailsById = async (driverId: string): Promise<DriverDetailed | null> => {
+export const fetchDriverDetailsById = async (driverId: string): Promise<DriverDetailed> => {
   try {
     const driver = await fetchDriverById(driverId);
     if (!driver) throw new Error(`Driver ${driverId} not found.`);
 
     const trafficViolations = await fetchTrafficViolationsByDriverId(driverId);
     return {
-      driver: driver,
-      trafficViolations: trafficViolations,
+      driver,
+      trafficViolations,
     };
   } catch (error) {
     console.error(error);

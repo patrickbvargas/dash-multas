@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
 import { Card, CardList, Loading, EmptyData, Error } from "@components";
-import { fetchTrafficViolationsDetails } from "@services";
-import { useQuery } from "react-query";
 import { useAppContext } from "@contexts";
+import { useTrafficViolationList } from "@hooks";
 
 const TrafficViolationList = () => {
   const { showNotification } = useAppContext();
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["get-traffic-violations"],
-    queryFn: fetchTrafficViolationsDetails,
-  });
+  const { data, isError, isLoading } = useTrafficViolationList();
 
   const handleEditAction = (id: string) => {
     showNotification(

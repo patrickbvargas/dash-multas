@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { DetailGroup } from "@types";
 import {
   ActionControls,
@@ -22,7 +22,6 @@ import { useAppContext } from "@contexts";
 const DriverDetails = () => {
   const { id: driverId } = useParams();
   const { showNotification } = useAppContext();
-
   const { data, isLoading, isError } = useQuery({
     queryKey: ["get-driver-details", driverId],
     queryFn: () => {

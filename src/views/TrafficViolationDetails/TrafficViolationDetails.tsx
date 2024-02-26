@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import {
   ActionControls,
   DetailsDisplay,
@@ -10,7 +10,7 @@ import {
   NotFound,
   Tag,
 } from "@components";
-import { fetchTrafficViolationsDetailsById } from "@services";
+import { fetchTrafficViolationDetailsById } from "@services";
 import { DetailGroup } from "@types";
 import { convertCPFToLocaleFormat, convertDateToLocaleFormat } from "@utils";
 import { useAppContext } from "@contexts";
@@ -18,11 +18,10 @@ import { useAppContext } from "@contexts";
 const TrafficViolationDetails = () => {
   const { id: trafficViolationId } = useParams();
   const { showNotification } = useAppContext();
-
   const { data, isLoading, isError } = useQuery({
     queryKey: ["get-traffic-violation-details", trafficViolationId],
     queryFn: () => {
-      return trafficViolationId ? fetchTrafficViolationsDetailsById(trafficViolationId) : null;
+      return trafficViolationId ? fetchTrafficViolationDetailsById(trafficViolationId) : null;
     },
   });
 

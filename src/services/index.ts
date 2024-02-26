@@ -1,30 +1,30 @@
-import { fetchDrivers, fetchDriversDetails, fetchDriverById, fetchDriverDetailsById } from "./DriverService";
+import { fetchDrivers, fetchDriverById, fetchDriverDetails, fetchDriverDetailsById } from "./DriverService";
 import {
   fetchTrafficViolations,
-  fetchTrafficViolationsDetails,
-  fetchTrafficViolationsDetailsById,
-  fetchTrafficViolationsByDriverId,
   fetchTrafficViolationById,
+  fetchTrafficViolationDetails,
+  fetchTrafficViolationDetailsById,
+  fetchTrafficViolationsByDriverId,
   fetchTrafficViolationByAppealId,
 } from "./TrafficViolationService";
-import { fetchAppeals, fetchAppealsDetails, fetchAppealDetailsById, fetchAppealById } from "./AppealService";
+import { fetchAppeals, fetchAppealById, fetchAppealDetails, fetchAppealDetailsById } from "./AppealService";
 import { fetchEmployees, fetchEmployeeById } from "./EmployeeService";
 
 export {
   fetchDrivers,
-  fetchDriversDetails,
   fetchDriverById,
+  fetchDriverDetails,
   fetchDriverDetailsById,
   fetchTrafficViolations,
-  fetchTrafficViolationsDetails,
-  fetchTrafficViolationsDetailsById,
   fetchTrafficViolationById,
+  fetchTrafficViolationDetails,
+  fetchTrafficViolationDetailsById,
   fetchTrafficViolationsByDriverId,
   fetchTrafficViolationByAppealId,
   fetchAppeals,
-  fetchAppealsDetails,
-  fetchAppealDetailsById,
   fetchAppealById,
+  fetchAppealDetails,
+  fetchAppealDetailsById,
   fetchEmployees,
   fetchEmployeeById,
 };

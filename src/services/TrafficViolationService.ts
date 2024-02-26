@@ -55,25 +55,53 @@ export const fetchTrafficViolationById = async (
 
 // ? ---------------------------------
 
-export const fetchTrafficViolationsDetails = async (): Promise<TrafficViolationDetailed[] | null> => {
-  try {
-    const trafficViolations = await fetchTrafficViolations();
-    if (!trafficViolations) return null;
+// export const fetchTrafficViolationsDetails = async (): Promise<TrafficViolationDetailed[] | null> => {
+//   try {
+//     const trafficViolations = await fetchTrafficViolations();
+//     if (!trafficViolations) return null;
 
-    const dataPromises = trafficViolations.map(async (trafficViolation) => {
-      return await fetchTrafficViolationsDetailsById(trafficViolation.id);
-    });
-    const dataResolves = await Promise.all(dataPromises);
-    return dataResolves.filter(isTrafficViolationDetailedData);
+//     const dataPromises = trafficViolations.map(async (trafficViolation) => {
+//       const driver = await fetchDriverById(trafficViolation.driverId);
+//       if (!driver) throw new Error(`Driver ${trafficViolation.driverId} not found.`);
+
+//       const appeal = trafficViolation.appealId ? await fetchAppealById(trafficViolation.appealId) : null;
+
+//       return {
+//         trafficViolation,
+//         driver,
+//         appeal,
+//       };
+//     });
+//     const dataResolves = await Promise.all(dataPromises);
+//     return dataResolves.filter(isTrafficViolationDetailedData);
+//   } catch (error) {
+//     console.error(error);
+//     throw error;
+//   }
+// };
+
+export const fetchTrafficViolationDetails = async (
+  trafficViolation: TrafficViolation,
+): Promise<TrafficViolationDetailed> => {
+  try {
+    const driver = await fetchDriverById(trafficViolation.driverId);
+    if (!driver) throw new Error(`Driver ${trafficViolation.driverId} not found.`);
+
+    const appeal = trafficViolation.appealId ? await fetchAppealById(trafficViolation.appealId) : null;
+    return {
+      trafficViolation,
+      driver,
+      appeal,
+    };
   } catch (error) {
     console.error(error);
     throw error;
   }
 };
 
-export const fetchTrafficViolationsDetailsById = async (
+export const fetchTrafficViolationDetailsById = async (
   trafficViolationId: string,
-): Promise<TrafficViolationDetailed | null> => {
+): Promise<TrafficViolationDetailed> => {
   try {
     const trafficViolation = await fetchTrafficViolationById(trafficViolationId);
     if (!trafficViolation) throw new Error(`Traffic Violation ${trafficViolationId} not found.`);

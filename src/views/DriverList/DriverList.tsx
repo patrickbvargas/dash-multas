@@ -1,16 +1,12 @@
 import { Link } from "react-router-dom";
 import { Card, CardList, Loading, EmptyData, Error } from "@components";
-import { fetchDriversDetails } from "@services";
-import { useQuery } from "react-query";
 import { convertCPFToLocaleFormat } from "@utils";
 import { useAppContext } from "@contexts";
+import { useDriverList } from "@hooks";
 
 const DriverList = () => {
   const { showNotification } = useAppContext();
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["get-drivers"],
-    queryFn: fetchDriversDetails,
-  });
+  const { data, isError, isLoading } = useDriverList();
 
   const handleEditAction = (id: string) => {
     showNotification(

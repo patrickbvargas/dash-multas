@@ -1,7 +1,7 @@
 import { Content, Header, Sidebar } from "@layout";
 import { AppContextProvider } from "@contexts";
 import { BrowserRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const QUERY_STALE_TIME_IN_SECONDS = 60;
 
