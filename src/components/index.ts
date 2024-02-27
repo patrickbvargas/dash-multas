@@ -16,6 +16,7 @@ import NotificationBanner from "./ui/NotificationBanner";
 import Card from "./Card/Card";
 import Control from "./Control/Control";
 import DetailsDisplay from "./DetailsDisplay/DetailsDisplay";
+import Input from "./form/Input";
 
 export {
   Button,
@@ -36,4 +37,5 @@ export {
   UnderConstruction,
   NotificationBanner,
   DetailsPageWrapper,
+  Input,
 };
