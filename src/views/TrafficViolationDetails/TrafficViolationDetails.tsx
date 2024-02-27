@@ -19,7 +19,7 @@ const TrafficViolationDetails = () => {
   const { id: trafficViolationId } = useParams();
   const { showNotification } = useAppContext();
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["get-traffic-violation-details", trafficViolationId],
+    queryKey: ["get-details", "traffic-violation", trafficViolationId],
     queryFn: () => {
       return trafficViolationId ? fetchTrafficViolationDetailsById(trafficViolationId) : null;
     },

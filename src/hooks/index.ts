@@ -1,8 +1,6 @@
 import { useLocalStorage } from "./useLocalStorage";
 import { useDarkMode } from "./useDarkMode";
 import { usePageTitle } from "./usePageTitle";
-import { useDriverList } from "./useDriverList";
-import { useTrafficViolationList } from "./useTrafficViolationList";
-import { useAppealList } from "./useAppealList";
+import { useDataListDetails } from "./useDataListDetails";
 
-export { useLocalStorage, useDarkMode, usePageTitle, useDriverList, useTrafficViolationList, useAppealList };
+export { useLocalStorage, useDarkMode, usePageTitle, useDataListDetails };

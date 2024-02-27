@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { Card, CardList, Loading, EmptyData, Error } from "@components";
-import { convertCPFToLocaleFormat } from "@utils";
+import { convertCPFToLocaleFormat, isDriverDetailedData } from "@utils";
 import { useAppContext } from "@contexts";
-import { useDriverList } from "@hooks";
+import { useDataListDetails } from "@hooks";
+import { Driver, DriverDetailed } from "@types";
+import { fetchDriverDetails, fetchDrivers } from "@services";
 
 const DriverList = () => {
   const { showNotification } = useAppContext();
-  const { data, isError, isLoading } = useDriverList();
+  const { data, isLoading, isError } = useDataListDetails<Driver, DriverDetailed>(
+    ["driver"],
+    fetchDrivers,
+    fetchDriverDetails,
+    isDriverDetailedData,
+  );
 
   const handleEditAction = (id: string) => {
     showNotification(

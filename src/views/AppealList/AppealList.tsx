@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { Card, CardList, Loading, EmptyData, Tag, Error } from "@components";
-import { convertDateToLocaleFormat } from "@utils";
+import { convertDateToLocaleFormat, isAppealDetailedData } from "@utils";
 import { useAppContext } from "@contexts";
-import { AppealStatusGroup } from "@types";
-import { useAppealList } from "@hooks";
+import { Appeal, AppealDetailed, AppealStatusGroup } from "@types";
+import { useDataListDetails } from "@hooks";
+import { fetchAppealDetails, fetchAppeals } from "@services";
 
 interface AppealListProps {
   statusGroup?: AppealStatusGroup | null;
@@ -11,7 +12,12 @@ interface AppealListProps {
 
 const AppealList = ({ statusGroup = null }: AppealListProps) => {
   const { showNotification } = useAppContext();
-  const { data, isLoading, isError } = useAppealList(statusGroup);
+  const { data, isLoading, isError } = useDataListDetails<Appeal, AppealDetailed>(
+    ["appeal", statusGroup],
+    () => fetchAppeals(statusGroup),
+    fetchAppealDetails,
+    isAppealDetailedData,
+  );
 
   const handleEditAction = (id: string) => {
     showNotification(

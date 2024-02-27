@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
 import { Card, CardList, Loading, EmptyData, Error } from "@components";
 import { useAppContext } from "@contexts";
-import { useTrafficViolationList } from "@hooks";
+import { useDataListDetails } from "@hooks";
+import { TrafficViolation, TrafficViolationDetailed } from "@types";
+import { fetchTrafficViolationDetails, fetchTrafficViolations } from "@services";
+import { isTrafficViolationDetailedData } from "@utils";
 
 const TrafficViolationList = () => {
   const { showNotification } = useAppContext();
-  const { data, isError, isLoading } = useTrafficViolationList();
+  const { data, isError, isLoading } = useDataListDetails<TrafficViolation, TrafficViolationDetailed>(
+    ["traffic-violation"],
+    fetchTrafficViolations,
+    fetchTrafficViolationDetails,
+    isTrafficViolationDetailedData,
+  );
 
   const handleEditAction = (id: string) => {
     showNotification(

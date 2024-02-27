@@ -19,7 +19,7 @@ const AppealDetails = () => {
   const { id: appealId } = useParams();
   const { showNotification } = useAppContext();
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["get-appeal-details", appealId],
+    queryKey: ["get-details", "appeal", appealId],
     queryFn: () => {
       return appealId ? fetchAppealDetailsById(appealId) : null;
     },

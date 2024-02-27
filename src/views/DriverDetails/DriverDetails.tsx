@@ -23,7 +23,7 @@ const DriverDetails = () => {
   const { id: driverId } = useParams();
   const { showNotification } = useAppContext();
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["get-driver-details", driverId],
+    queryKey: ["get-details", "driver", driverId],
     queryFn: () => {
       return driverId ? fetchDriverDetailsById(driverId) : null;
     },
