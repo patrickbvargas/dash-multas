@@ -499,7 +499,7 @@ const UnderConstruction = () => {
           </g>
         </g>
       </svg>
-      <a className="text-center text-xs text-blue-500" href="https://storyset.com/technology">
+      <a className="text-center text-xs text-blue-500" href="https://storyset.com/technology" target="_blank">
         Technology illustrations by Storyset
       </a>
     </div>

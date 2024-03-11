@@ -156,7 +156,7 @@ const Error = () => {
           </g>
         </g>
       </svg>
-      <a className="text-center text-xs text-blue-500" href="https://storyset.com/night">
+      <a className="text-center text-xs text-blue-500" href="https://storyset.com/night" target="_blank">
         Nigth illustrations by Storyset
       </a>
     </div>

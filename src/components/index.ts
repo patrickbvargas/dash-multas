@@ -28,6 +28,7 @@ import CreateMenu from "./CreateMenu/CreateMenu";
 import DriverForm from "./entityForm/DriverForm";
 import Card from "./Card/Card";
 import Control from "./Control/Control";
+import Welcome from "./Welcome/Welcome";
 import DetailsDisplay from "./DetailsDisplay/DetailsDisplay";
 
 export {
@@ -62,4 +63,5 @@ export {
   FormRow,
   CreateMenu,
   DriverForm,
+  Welcome,
 };

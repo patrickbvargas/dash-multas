@@ -1,19 +1,17 @@
 import React from "react";
 import { cn } from "@utils";
 import { MainRoutes } from "@routes";
-import { useNotificationContext } from "@hooks";
+import { useModalContext } from "@hooks";
+import { Welcome } from "@components";
 
 interface ContentProps extends React.HTMLAttributes<HTMLElement> {}
 
 const Content = ({ className = "", ...props }: ContentProps) => {
-  const { showNotification } = useNotificationContext();
+  const { openModal } = useModalContext();
 
   React.useEffect(() => {
-    // TODO: implement welcome modal page
-    showNotification({
-      message:
-        "Este site contém dados fictícios para fins de demonstração e não representa informações reais.",
-      variant: "info",
+    openModal({
+      component: <Welcome />,
     });
   }, []);
 

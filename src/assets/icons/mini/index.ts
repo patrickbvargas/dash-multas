@@ -11,6 +11,7 @@ import {
   ChevronRightIcon,
   XMarkIcon,
   EyeSlashIcon,
+  BookmarkIcon,
 } from "@heroicons/react/20/solid";
 
 export {
@@ -26,4 +27,5 @@ export {
   ChevronRightIcon,
   XMarkIcon,
   EyeSlashIcon,
+  BookmarkIcon,
 };

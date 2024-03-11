@@ -140,7 +140,7 @@ const DriverForm = ({ initialDriver = null }: DriverFormProps) => {
       if (!isDriverData(driver)) throw new Error("Invalid driver data");
 
       isUpdate ? await updateDriver(driver) : await createDriver(driver);
-      closeModal();
+      closeModal(); // TODO: fix, run only on success update/create
     } catch (error) {
       console.error(error);
       showNotification({

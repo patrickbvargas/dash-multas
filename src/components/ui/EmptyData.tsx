@@ -3143,7 +3143,7 @@ const EmptyData = () => {
           </g>
         </g>
       </svg>
-      <a className="text-center text-xs text-blue-500" href="https://storyset.com/magic">
+      <a className="text-center text-xs text-blue-500" href="https://storyset.com/magic" target="_blank">
         Magic illustrations by Storyset
       </a>
     </div>

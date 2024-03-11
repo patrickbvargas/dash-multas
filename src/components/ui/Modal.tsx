@@ -7,7 +7,7 @@ const Modal = ({ component = null }: ModalProps) => {
   const { closeModal } = useModalContext();
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-neutral-950/50 backdrop-blur-sm">
+    <div className="fixed inset-0 flex items-center justify-center bg-neutral-950/50 p-2 backdrop-blur-sm">
       <div className="flex flex-col">
         <XMarkIcon
           className={cn(
