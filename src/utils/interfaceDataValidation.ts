@@ -11,6 +11,7 @@ import {
   DriverDetailed,
   TrafficViolationDetailed,
   AppealDetailed,
+  ViaCepAddress,
 } from "@types";
 
 export const isDriverDetailedData = (data: unknown): data is DriverDetailed => {
@@ -260,6 +261,28 @@ export const isEmployeeData = (data: unknown): data is Employee => {
     return true;
   } else {
     console.warn("Data not recognized as Employee interface.", data);
+    return false;
+  }
+};
+
+export const isViaCepAddressData = (data: unknown): data is ViaCepAddress => {
+  if (
+    data &&
+    typeof data === "object" &&
+    "cep" in data &&
+    "logradouro" in data &&
+    "bairro" in data &&
+    "localidade" in data &&
+    "uf" in data &&
+    typeof data.cep === "string" &&
+    typeof data.logradouro === "string" &&
+    typeof data.bairro === "string" &&
+    typeof data.localidade === "string" &&
+    typeof data.uf === "string"
+  ) {
+    return true;
+  } else {
+    console.warn("Data not recognized as ViaCepAddress interface.", data);
     return false;
   }
 };

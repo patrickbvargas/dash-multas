@@ -1,9 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Button, ThemeSwitcher } from "@components";
-import { PlusIcon } from "@icons/mini";
-import { useAppContext } from "@contexts";
 import { cn } from "@utils";
+import { useAppContext } from "@hooks";
+import { CreateMenu } from "@components";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -46,11 +45,11 @@ const PATHNAME_CONFIG: Pathname[] = [
     pathname: "/infracoes",
     title: "Infrações",
   },
-];
+]; // TODO: import info from sideBar nav
 
 // TODO: review
 const Header = ({ className = "", ...props }: HeaderProps) => {
-  const { pageTitle, setPageTitle, showNotification } = useAppContext();
+  const { pageTitle, setPageTitle } = useAppContext();
   const location = useLocation();
 
   React.useEffect(() => {
@@ -61,24 +60,25 @@ const Header = ({ className = "", ...props }: HeaderProps) => {
     }
   }, [location]);
 
-  const handleClick = () => {
-    showNotification("Quase lá! Estamos implementando esta funcionalidade.", "warning");
-  };
-
   return (
     <header
       className={cn(
-        "flex flex-col items-center justify-between gap-4 overflow-hidden px-2 pb-2 pt-4 sm:flex-row sm:px-8 sm:pb-4 sm:pt-8",
+        "flex flex-col items-center justify-between gap-4 px-2 pb-2 pt-4 sm:flex-row sm:px-8 sm:pb-4 sm:pt-8",
         className,
       )}
       {...props}
     >
-      <h1 className="max-w-full truncate text-2xl font-normal uppercase tracking-wider text-gray-600 dark:text-black-50">
+      <h1
+        className={cn(
+          "max-w-full truncate text-2xl font-normal uppercase tracking-wider",
+          "text-gray-600",
+          "dark:text-black-50",
+        )}
+      >
         {pageTitle}
       </h1>
       <div className="flex gap-2">
-        <ThemeSwitcher />
-        <Button label="Criar" icon={<PlusIcon className="h-5" />} type="startIcon" onClick={handleClick} />
+        <CreateMenu />
       </div>
     </header>
   );

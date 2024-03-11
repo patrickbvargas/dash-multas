@@ -12,6 +12,8 @@ import {
   DocumentIcon,
   WalletIcon,
   XMarkIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 
 export {
@@ -28,4 +30,6 @@ export {
   DocumentIcon,
   WalletIcon,
   XMarkIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 };

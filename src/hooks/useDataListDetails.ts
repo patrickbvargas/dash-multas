@@ -1,10 +1,11 @@
 import { useQuery, useQueries } from "@tanstack/react-query";
+import { Entity } from "@types";
 
 interface ItemList {
   id: string;
 }
 
-type QueryKeysType = [string, (string | null)?];
+type QueryKeysType = [Entity, (string | null)?];
 
 export function useDataListDetails<T extends ItemList, D>(
   queryKeys: QueryKeysType,
@@ -46,7 +47,7 @@ export function useDataListDetails<T extends ItemList, D>(
   });
 
   return {
-    data: details,
+    data: details.length > 0 ? details : null,
     isLoading: isListLoading || isDetailsLoading,
     isError: isListError || isDetailsError,
   };

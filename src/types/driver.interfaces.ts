@@ -1,4 +1,4 @@
-import { Attachment, TrafficViolation } from "@types";
+import { TrafficViolation } from "@types";
 
 export interface Address {
   street: string;
@@ -33,7 +33,6 @@ export interface Driver {
   address: Address;
   license: License;
   contact: Contact;
-  attachments?: Attachment[];
 }
 
 export interface DriverDetailed {

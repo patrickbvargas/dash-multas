@@ -9,7 +9,8 @@ const ThemeSwitcher = () => {
     <div className="flex justify-center">
       <Button
         onClick={() => toggle()}
-        variant="ghost"
+        variant="theme"
+        iconStyle="onlyIcon"
         icon={isDarkMode ? <SunIcon className="h-5" /> : <MoonIcon className="h-5" />}
       />
     </div>

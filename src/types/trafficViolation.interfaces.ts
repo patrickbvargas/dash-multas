@@ -1,4 +1,4 @@
-import { Appeal, Attachment, Driver } from "@types";
+import { Appeal, Driver } from "@types";
 
 export interface Vehicle {
   plate: string;
@@ -22,7 +22,6 @@ export interface TrafficViolation {
   selfSuspensive: boolean;
   deadlines: Deadlines;
   vehicle: Vehicle;
-  attachments?: Attachment[];
 }
 
 export interface TrafficViolationDetailed {

@@ -12,6 +12,7 @@
       "@contexts": ["src/contexts"],
       "@services": ["src/services"],
       "@environment": ["src/env"],
+      "@constants": ["src/constants"],
       "@assets": ["src/assets"],
       "@icons/solid": ["src/assets/icons/solid"],
       "@icons/outline": ["src/assets/icons/outline"],

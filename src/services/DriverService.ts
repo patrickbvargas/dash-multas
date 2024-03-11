@@ -52,3 +52,52 @@ export const fetchDriverDetailsById = async (driverId: string): Promise<DriverDe
     throw error;
   }
 };
+
+// ? -------------
+
+export const createDriver = async (driver: Driver): Promise<string> => {
+  try {
+    const fb = getFirestoreUtils();
+    const uuid = crypto.randomUUID();
+    const timestamp = new Date().toISOString();
+    const driverPayload = { ...driver, id: uuid, createdAt: timestamp };
+    await fb.setDoc(fb.collectionNames.drivers, driverPayload, false);
+    return uuid;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const updateDriver = async (driver: Driver): Promise<void> => {
+  try {
+    const fb = getFirestoreUtils();
+    const timestamp = new Date().toISOString();
+    const driverPayload = { ...driver, updatedAt: timestamp };
+    await fb.setDoc(fb.collectionNames.drivers, driverPayload, true);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const deleteDriver = async (driver: Driver): Promise<void> => {
+  try {
+    const fb = getFirestoreUtils();
+    await fb.deleteDoc(fb.collectionNames.drivers, driver);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const isDriverExistent = async (cpf: string): Promise<boolean> => {
+  try {
+    const fb = getFirestoreUtils();
+    const data = await fb.fetchDocsByQuery(fb.collectionNames.drivers, "cpf", cpf);
+    return Array.isArray(data) && data.length > 0;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};

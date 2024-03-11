@@ -1,13 +1,13 @@
 import React from "react";
 import { cva } from "class-variance-authority";
 import { cn } from "@utils";
-import { useAppContext } from "@contexts";
 import { XMarkIcon } from "@icons/mini";
+import { NotificationProps } from "@types";
+import { useNotificationContext } from "@hooks";
+import { NOTIFICATION_TIME_IN_SECONDS } from "@constants";
 
-const NOTIFICATION_TIME_IN_SECONDS = 5;
-
-const notificationBannerVariants = cva(
-  "absolute right-2 left-2 top-8 w-max-full flex items-center gap-2 rounded-md px-4 py-3 shadow-md ring-1 transition-opacity duration-500 dark:shadow-none sm:right-8 sm:top:8 sm:left-auto",
+const notificationVariants = cva(
+  "absolute right-2 left-2 top-8 w-max-full flex items-center gap-2 rounded-md px-4 py-3 shadow-md ring-1 transition-opacity duration-500 dark:shadow-none sm:right-8 sm:top:8 sm:left-auto z-50",
   {
     variants: {
       variant: {
@@ -25,11 +25,9 @@ const notificationBannerVariants = cva(
   },
 );
 
-interface NotificationBannerProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-const NotificationBanner = ({ className = "", ...props }: NotificationBannerProps) => {
+const Notification = ({ message = "", variant = "default" }: NotificationProps) => {
+  const { hideNotification } = useNotificationContext();
   const [isVisible, setIsVisible] = React.useState(false);
-  const { notificationConfig, setNotificationConfig } = useAppContext();
 
   React.useEffect(() => {
     setIsVisible(true);
@@ -39,30 +37,26 @@ const NotificationBanner = ({ className = "", ...props }: NotificationBannerProp
     return () => {
       clearTimeout(timer);
     };
-  }, [notificationConfig]);
+  }, []);
 
   const handleClose = () => {
     setIsVisible(false);
     setTimeout(() => {
-      setNotificationConfig({ message: "", variant: "default" });
+      hideNotification();
     }, 500);
   };
 
   return (
-    notificationConfig.message && (
-      <div
-        className={cn(
-          notificationBannerVariants({ variant: notificationConfig.variant }),
-          isVisible ? "opacity-100" : "pointer-events-none opacity-0",
-          className,
-        )}
-        {...props}
-      >
-        <p className="text-sm">{notificationConfig.message}</p>
-        <XMarkIcon className="hidden h-5 cursor-pointer hover:animate-pulse sm:block" onClick={handleClose} />
-      </div>
-    )
+    <div
+      className={cn(
+        notificationVariants({ variant: variant }),
+        isVisible ? "opacity-100" : "pointer-events-none opacity-0",
+      )}
+    >
+      <p className="text-sm">{message}</p>
+      <XMarkIcon className="hidden h-5 cursor-pointer hover:animate-pulse sm:block" onClick={handleClose} />
+    </div>
   );
 };
 
-export default NotificationBanner;
+export default Notification;

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import { Card, CardList, Loading, EmptyData, Error } from "@components";
-import { convertCPFToLocaleFormat, isDriverDetailedData } from "@utils";
-import { useAppContext } from "@contexts";
-import { useDataListDetails } from "@hooks";
 import { Driver, DriverDetailed } from "@types";
 import { fetchDriverDetails, fetchDrivers } from "@services";
+import { useDataListDetails, useEntityCrud, useModalContext } from "@hooks";
+import { convertCPFToLocaleFormat, isDriverDetailedData } from "@utils";
+import { Card, CardList, Loading, EmptyData, Error, DriverForm, DeleteDialog } from "@components";
 
 const DriverList = () => {
-  const { showNotification } = useAppContext();
+  const { openModal } = useModalContext();
+  const { deleteDriver } = useEntityCrud();
   const { data, isLoading, isError } = useDataListDetails<Driver, DriverDetailed>(
     ["driver"],
     fetchDrivers,
@@ -15,18 +15,24 @@ const DriverList = () => {
     isDriverDetailedData,
   );
 
-  const handleEditAction = (id: string) => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de edição. [DriverId: ${id}]`,
-      "warning",
-    );
+  const handleEditAction = (driver: Driver) => {
+    openModal({
+      component: <DriverForm initialDriver={driver} />,
+    });
   };
 
-  const handleDeleteAction = (id: string) => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de exclusão. [DriverId: ${id}]`,
-      "warning",
-    );
+  const handleDeleteAction = (driver: Driver) => {
+    openModal({
+      component: (
+        <DeleteDialog
+          entity="driver"
+          identification={driver.fullName}
+          onConfirm={() => {
+            deleteDriver(driver);
+          }}
+        />
+      ),
+    });
   };
 
   if (isLoading) return <Loading />;
@@ -42,8 +48,8 @@ const DriverList = () => {
               <Card.Header
                 title={driver.fullName}
                 isPriority={trafficViolations?.some((tv) => tv.selfSuspensive) ?? false}
-                editCallback={() => handleEditAction(driver.id)}
-                deleteCallback={() => handleDeleteAction(driver.id)}
+                editCallback={() => handleEditAction(driver)}
+                deleteCallback={() => handleDeleteAction(driver)}
               />
               <Card.Divider />
               <Card.Content>

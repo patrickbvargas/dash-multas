@@ -1,6 +1,6 @@
-export type NotificationVariant = "info" | "success" | "warning" | "danger" | "default";
+type NotificationVariant = "info" | "success" | "warning" | "danger" | "default";
 
-export interface NotificationConfig {
+export interface NotificationProps {
   message: string;
   variant: NotificationVariant;
 }

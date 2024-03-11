@@ -24,7 +24,7 @@ const SidebarNavLink = ({
       )}
       {...props}
     >
-      <div className="w-6">{icon}</div>
+      <div>{icon}</div>
       <p className="text-sm font-normal transition-opacity duration-300 group-[.is-collapsed]/sidebar:pointer-events-none group-[.is-collapsed]/sidebar:opacity-0">
         {label}
       </p>

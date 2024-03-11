@@ -1,4 +1,4 @@
-import { Attachment, Driver, Employee, TrafficViolation } from "@types";
+import { Driver, Employee, TrafficViolation } from "@types";
 
 export type AppealStatusGroup = "liberado" | "administrativo" | "judicial" | "juridico";
 
@@ -34,7 +34,6 @@ export interface Appeal {
   paymentType: PaymentType;
   deadline: string;
   observation?: string;
-  attachments?: Attachment[];
 }
 
 export interface AppealDetailed {

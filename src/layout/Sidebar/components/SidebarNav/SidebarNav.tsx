@@ -25,46 +25,46 @@ const NAV_LINKS: NavGroup[] = [
   [
     {
       to: "/",
-      icon: <ChartPieIcon />,
+      icon: <ChartPieIcon className="h-6" />,
       label: "Dashboard",
     },
     {
       to: "/calendario",
-      icon: <CalendarIcon />,
+      icon: <CalendarIcon className="h-6" />,
       label: "Calendário",
     },
   ],
   [
     {
       to: "/administrativo",
-      icon: <FolderOpenIcon />,
+      icon: <FolderOpenIcon className="h-6" />,
       label: "Administrativo",
     },
     {
       to: "/judicial",
-      icon: <WalletIcon />,
+      icon: <WalletIcon className="h-6" />,
       label: "Judicial",
     },
     {
       to: "/juridico",
-      icon: <BriefcaseIcon />,
+      icon: <BriefcaseIcon className="h-6" />,
       label: "Jurídico",
     },
   ],
   [
     {
       to: "/recursos",
-      icon: <InboxIcon />,
+      icon: <InboxIcon className="h-6" />,
       label: "Recursos",
     },
     {
       to: "/condutores",
-      icon: <UserIcon />,
+      icon: <UserIcon className="h-6" />,
       label: "Condutores",
     },
     {
       to: "/infracoes",
-      icon: <DocumentIcon />,
+      icon: <DocumentIcon className="h-6" />,
       label: "Infrações",
     },
   ],
@@ -72,7 +72,7 @@ const NAV_LINKS: NavGroup[] = [
 
 interface SidebarNavProps extends React.HTMLAttributes<HTMLElement> {}
 
-// TODO: review
+// TODO: refatore
 const SidebarNav = ({ className = "", ...props }: SidebarNavProps) => {
   return (
     <nav className="w-full flex-1" {...props}>

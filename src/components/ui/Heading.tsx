@@ -16,9 +16,19 @@ const Heading = ({ title = "", linkTo = null, className = "", ...props }: Headin
         className={cn("group inline-flex max-w-full cursor-pointer items-center gap-2.5", className)}
         {...props}
       >
-        <span className="h-4 w-1 rounded-r-sm bg-gray-300 transition duration-300 group-hover:bg-accent dark:bg-black-400" />
-        <h3 className="truncate text-base font-medium uppercase text-gray-600 dark:text-black-50">{title}</h3>
-        {linkTo && <ArrowTopRightOnSquareIcon className="h-5 text-gray-400 dark:text-black-100" />}
+        <span
+          className={cn(
+            "h-4 w-1 rounded-r-sm transition duration-300 group-hover:bg-accent ",
+            "bg-gray-300",
+            "dark:bg-black-400",
+          )}
+        />
+        <h3 className={cn("truncate text-base font-medium uppercase", "text-gray-600", "dark:text-black-50")}>
+          {title}
+        </h3>
+        {linkTo && (
+          <ArrowTopRightOnSquareIcon className={cn("h-5", "text-gray-400", "dark:text-black-100")} />
+        )}
       </div>
     </Link>
   );

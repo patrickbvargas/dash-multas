@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
-import { Card, CardList, Loading, EmptyData, Tag, Error } from "@components";
-import { convertDateToLocaleFormat, isAppealDetailedData } from "@utils";
-import { useAppContext } from "@contexts";
-import { Appeal, AppealDetailed, AppealStatusGroup } from "@types";
-import { useDataListDetails } from "@hooks";
 import { fetchAppealDetails, fetchAppeals } from "@services";
+import { Appeal, AppealDetailed, AppealStatusGroup } from "@types";
+import { useDataListDetails, useNotificationContext } from "@hooks";
+import { convertDateToLocaleFormat, isAppealDetailedData } from "@utils";
+import { Card, CardList, Loading, EmptyData, Tag, Error } from "@components";
 
 interface AppealListProps {
   statusGroup?: AppealStatusGroup | null;
 }
 
 const AppealList = ({ statusGroup = null }: AppealListProps) => {
-  const { showNotification } = useAppContext();
+  const { showNotification } = useNotificationContext();
   const { data, isLoading, isError } = useDataListDetails<Appeal, AppealDetailed>(
     ["appeal", statusGroup],
     () => fetchAppeals(statusGroup),
@@ -20,17 +19,17 @@ const AppealList = ({ statusGroup = null }: AppealListProps) => {
   );
 
   const handleEditAction = (id: string) => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de edição. [AppealId: ${id}]`,
-      "warning",
-    );
+    showNotification({
+      message: `Quase lá! Estamos implementando funcionalidade de edição. [AppealId: ${id}]`,
+      variant: "warning",
+    });
   };
 
   const handleDeleteAction = (id: string) => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de exclusão. [AppealId: ${id}]`,
-      "warning",
-    );
+    showNotification({
+      message: `Quase lá! Estamos implementando funcionalidade de exclusão. [AppealId: ${id}]`,
+      variant: "warning",
+    });
   };
 
   if (isLoading) return <Loading />;

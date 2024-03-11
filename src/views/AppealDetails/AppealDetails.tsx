@@ -11,13 +11,13 @@ import {
   NotFound,
   Tag,
 } from "@components";
+import { useNotificationContext } from "@hooks";
 import { fetchAppealDetailsById } from "@services";
 import { convertDateToLocaleFormat, convertCurrencyToLocaleFormat, convertCPFToLocaleFormat } from "@utils";
-import { useAppContext } from "@contexts";
 
 const AppealDetails = () => {
   const { id: appealId } = useParams();
-  const { showNotification } = useAppContext();
+  const { showNotification } = useNotificationContext();
   const { data, isLoading, isError } = useQuery({
     queryKey: ["get-details", "appeal", appealId],
     queryFn: () => {
@@ -26,17 +26,17 @@ const AppealDetails = () => {
   });
 
   const handleEditAction = () => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de edição. [AppealId: ${appealId}]`,
-      "warning",
-    );
+    showNotification({
+      message: `Quase lá! Estamos implementando funcionalidade de edição. [AppealId: ${appealId}]`,
+      variant: "warning",
+    });
   };
 
   const handleDeleteAction = () => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de exclusão. [AppealId: ${appealId}]`,
-      "warning",
-    );
+    showNotification({
+      message: `Quase lá! Estamos implementando funcionalidade de exclusão. [AppealId: ${appealId}]`,
+      variant: "warning",
+    });
   };
 
   if (isLoading) return <Loading />;

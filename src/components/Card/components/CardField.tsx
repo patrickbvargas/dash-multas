@@ -26,7 +26,7 @@ const CardField = ({
   ...props
 }: CardFieldProps) => {
   return (
-    <dl className={cn("flex flex-col gap-1 text-gray-500 dark:text-black-100", className)} {...props}>
+    <dl className={cn("flex flex-col gap-1", "text-gray-500", "dark:text-black-100", className)} {...props}>
       <dt className="truncate text-xs font-normal uppercase">{label}</dt>
       <dd className={cardFieldVariants({ variant })}>{value}</dd>
     </dl>

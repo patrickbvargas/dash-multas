@@ -1,3 +1,8 @@
-import { PencilSquareIcon, TrashIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import {
+  PencilSquareIcon,
+  TrashIcon,
+  ArrowTopRightOnSquareIcon,
+  CheckCircleIcon,
+} from "@heroicons/react/24/outline";
 
-export { PencilSquareIcon, TrashIcon, ArrowTopRightOnSquareIcon };
+export { PencilSquareIcon, TrashIcon, ArrowTopRightOnSquareIcon, CheckCircleIcon };

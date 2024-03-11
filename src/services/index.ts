@@ -1,4 +1,14 @@
-import { fetchDrivers, fetchDriverById, fetchDriverDetails, fetchDriverDetailsById } from "./DriverService";
+import { queryClient } from "./queryClient";
+import {
+  fetchDrivers,
+  fetchDriverById,
+  fetchDriverDetails,
+  fetchDriverDetailsById,
+  createDriver,
+  updateDriver,
+  deleteDriver,
+  isDriverExistent,
+} from "./DriverService";
 import {
   fetchTrafficViolations,
   fetchTrafficViolationById,
@@ -9,8 +19,10 @@ import {
 } from "./TrafficViolationService";
 import { fetchAppeals, fetchAppealById, fetchAppealDetails, fetchAppealDetailsById } from "./AppealService";
 import { fetchEmployees, fetchEmployeeById } from "./EmployeeService";
+import { fetchAddressByZipCode } from "./ViaCepService";
 
 export {
+  queryClient,
   fetchDrivers,
   fetchDriverById,
   fetchDriverDetails,
@@ -27,4 +39,9 @@ export {
   fetchAppealDetailsById,
   fetchEmployees,
   fetchEmployeeById,
+  fetchAddressByZipCode,
+  createDriver,
+  updateDriver,
+  deleteDriver,
+  isDriverExistent,
 };

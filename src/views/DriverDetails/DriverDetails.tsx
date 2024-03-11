@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { DetailGroup } from "@types";
+import { useEntityCrud, useModalContext } from "@hooks";
 import {
   ActionControls,
   DetailsDisplay,
@@ -9,6 +10,8 @@ import {
   Loading,
   Error,
   NotFound,
+  DriverForm,
+  DeleteDialog,
 } from "@components";
 import { fetchDriverDetailsById } from "@services";
 import {
@@ -17,11 +20,11 @@ import {
   convertPhoneNumberToLocaleFormat,
   convertZipCodeToLocaleFormat,
 } from "@utils";
-import { useAppContext } from "@contexts";
 
 const DriverDetails = () => {
   const { id: driverId } = useParams();
-  const { showNotification } = useAppContext();
+  const { openModal } = useModalContext();
+  const { deleteDriver } = useEntityCrud();
   const { data, isLoading, isError } = useQuery({
     queryKey: ["get-details", "driver", driverId],
     queryFn: () => {
@@ -30,17 +33,25 @@ const DriverDetails = () => {
   });
 
   const handleEditAction = () => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de edição. [DriverId: ${driverId}]`,
-      "warning",
-    );
+    if (!data) return;
+    openModal({
+      component: <DriverForm initialDriver={data.driver} />,
+    });
   };
 
   const handleDeleteAction = () => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de exclusão. [DriverId: ${driverId}]`,
-      "warning",
-    );
+    if (!data) return;
+    openModal({
+      component: (
+        <DeleteDialog
+          entity="driver"
+          identification={data.driver.fullName}
+          onConfirm={() => {
+            deleteDriver(data.driver);
+          }}
+        />
+      ),
+    });
   };
 
   if (isLoading) return <Loading />;
@@ -66,7 +77,7 @@ const DriverDetails = () => {
       title: "Endereço",
       linkTo: null,
       fields: [
-        { label: "Rua", value: driver.address.street },
+        { label: "Logradouro", value: driver.address.street },
         { label: "Número", value: driver.address.houseNumber },
         { label: "Complemento", value: driver.address.complement || "N/A" },
         { label: "CEP", value: convertZipCodeToLocaleFormat(driver.address.zipCode) },

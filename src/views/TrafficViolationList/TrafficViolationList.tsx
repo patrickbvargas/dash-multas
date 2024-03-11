@@ -1,32 +1,31 @@
 import { Link } from "react-router-dom";
-import { Card, CardList, Loading, EmptyData, Error } from "@components";
-import { useAppContext } from "@contexts";
-import { useDataListDetails } from "@hooks";
-import { TrafficViolation, TrafficViolationDetailed } from "@types";
-import { fetchTrafficViolationDetails, fetchTrafficViolations } from "@services";
 import { isTrafficViolationDetailedData } from "@utils";
+import { useDataListDetails, useNotificationContext } from "@hooks";
+import { TrafficViolation, TrafficViolationDetailed } from "@types";
+import { Card, CardList, Loading, EmptyData, Error } from "@components";
+import { fetchTrafficViolationDetails, fetchTrafficViolations } from "@services";
 
 const TrafficViolationList = () => {
-  const { showNotification } = useAppContext();
+  const { showNotification } = useNotificationContext();
   const { data, isError, isLoading } = useDataListDetails<TrafficViolation, TrafficViolationDetailed>(
-    ["traffic-violation"],
+    ["trafficViolation"],
     fetchTrafficViolations,
     fetchTrafficViolationDetails,
     isTrafficViolationDetailedData,
   );
 
   const handleEditAction = (id: string) => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de edição. [TrafficViolationId: ${id}]`,
-      "warning",
-    );
+    showNotification({
+      message: `Quase lá! Estamos implementando funcionalidade de edição. [TrafficViolationId: ${id}]`,
+      variant: "warning",
+    });
   };
 
   const handleDeleteAction = (id: string) => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de exclusão. [TrafficViolationId: ${id}]`,
-      "warning",
-    );
+    showNotification({
+      message: `Quase lá! Estamos implementando funcionalidade de exclusão. [TrafficViolationId: ${id}]`,
+      variant: "warning",
+    });
   };
 
   if (isLoading) return <Loading />;

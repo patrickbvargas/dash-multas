@@ -1,10 +1,7 @@
-// import { UnderConstruction } from "@components";
-
-import { Input } from "@components";
+import { UnderConstruction } from "@components";
 
 const Dashboard = () => {
-  return <Input id="name" label="Nome" value={"Patrick Miguel Barcellos de Vargas"} onChange={() => {}} />;
-  // return <UnderConstruction />;
+  return <UnderConstruction />;
 };
 
 export default Dashboard;

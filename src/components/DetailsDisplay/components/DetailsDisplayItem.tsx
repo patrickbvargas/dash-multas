@@ -9,8 +9,10 @@ const DetailsDisplayItem = ({ label = "", value = "", variant = "default" }: Det
 
   return (
     <dl className="flex flex-col gap-1.5">
-      <dt className="truncate text-sm font-medium text-gray-500 dark:text-black-100">{label}</dt>
-      <div className="group/value flex gap-4 text-gray-500 dark:text-black-100">
+      <dt className={cn("truncate text-sm font-semibold", "text-gray-500", "dark:text-black-100")}>
+        {label}
+      </dt>
+      <div className={cn("group/value flex gap-4", "text-gray-500", "dark:text-black-100")}>
         {isPassword && <EyeSlashIcon className="h-5" />}
         <dd
           className={cn(

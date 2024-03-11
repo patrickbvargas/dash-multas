@@ -1,19 +1,20 @@
 import React from "react";
 import { cn } from "@utils";
 import { MainRoutes } from "@routes";
-import { NotificationBanner } from "@components";
-import { useAppContext } from "@contexts";
+import { useNotificationContext } from "@hooks";
 
 interface ContentProps extends React.HTMLAttributes<HTMLElement> {}
 
 const Content = ({ className = "", ...props }: ContentProps) => {
-  const { notificationConfig, showNotification } = useAppContext();
+  const { showNotification } = useNotificationContext();
 
   React.useEffect(() => {
-    showNotification(
-      "Este site contém dados fictícios para fins de demonstração e não representa informações reais.",
-      "info",
-    );
+    // TODO: implement welcome modal page
+    showNotification({
+      message:
+        "Este site contém dados fictícios para fins de demonstração e não representa informações reais.",
+      variant: "info",
+    });
   }, []);
 
   return (
@@ -24,7 +25,6 @@ const Content = ({ className = "", ...props }: ContentProps) => {
       )}
       {...props}
     >
-      {notificationConfig.message ? <NotificationBanner /> : null}
       <MainRoutes />
     </main>
   );

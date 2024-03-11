@@ -19,7 +19,7 @@ const CardHeader = ({
 }: CardHeaderProps) => {
   return (
     <div className={cn("flex items-center justify-between", className)} {...props}>
-      <h2 className="truncate text-base font-medium text-gray-700 dark:text-black-50">{title}</h2>
+      <h2 className={cn("truncate text-base font-medium", "text-gray-700", "dark:text-black-50")}>{title}</h2>
       <div className="flex gap-2 px-2">
         <div className="hidden opacity-0 group-hover/card:inline-flex group-hover/card:opacity-100">
           <ActionControls editCallback={editCallback} deleteCallback={deleteCallback} />

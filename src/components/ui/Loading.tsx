@@ -1,6 +1,10 @@
-const Loading = () => {
+import { cn } from "@utils";
+
+interface LoadingProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const Loading = ({ className = "", ...props }: LoadingProps) => {
   return (
-    <div className="flex justify-center">
+    <div className={cn("flex justify-center", className)} {...props}>
       <svg
         className="animate-spin"
         height="50"

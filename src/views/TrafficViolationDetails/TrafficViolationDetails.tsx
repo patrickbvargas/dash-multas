@@ -10,14 +10,14 @@ import {
   NotFound,
   Tag,
 } from "@components";
-import { fetchTrafficViolationDetailsById } from "@services";
 import { DetailGroup } from "@types";
+import { useNotificationContext } from "@hooks";
+import { fetchTrafficViolationDetailsById } from "@services";
 import { convertCPFToLocaleFormat, convertDateToLocaleFormat } from "@utils";
-import { useAppContext } from "@contexts";
 
 const TrafficViolationDetails = () => {
   const { id: trafficViolationId } = useParams();
-  const { showNotification } = useAppContext();
+  const { showNotification } = useNotificationContext();
   const { data, isLoading, isError } = useQuery({
     queryKey: ["get-details", "traffic-violation", trafficViolationId],
     queryFn: () => {
@@ -26,17 +26,17 @@ const TrafficViolationDetails = () => {
   });
 
   const handleEditAction = () => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de edição. [TrafficViolationId: ${trafficViolationId}]`,
-      "warning",
-    );
+    showNotification({
+      message: `Quase lá! Estamos implementando funcionalidade de edição. [TrafficViolationId: ${trafficViolationId}]`,
+      variant: "warning",
+    });
   };
 
   const handleDeleteAction = () => {
-    showNotification(
-      `Quase lá! Estamos implementando funcionalidade de exclusão. [TrafficViolationId: ${trafficViolationId}]`,
-      "warning",
-    );
+    showNotification({
+      message: `Quase lá! Estamos implementando funcionalidade de exclusão. [TrafficViolationId: ${trafficViolationId}]`,
+      variant: "warning",
+    });
   };
 
   if (isLoading) return <Loading />;
@@ -71,7 +71,7 @@ const TrafficViolationDetails = () => {
       title: "Detalhes",
       linkTo: null,
       fields: [
-        { label: "Autuador", value: trafficViolation.infringementNotice },
+        { label: "Autuador", value: trafficViolation.issuer },
         { label: "Amparo Legal", value: trafficViolation.legalBasis },
       ],
     },

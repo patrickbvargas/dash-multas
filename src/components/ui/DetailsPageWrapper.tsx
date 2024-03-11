@@ -1,5 +1,6 @@
 import React from "react";
-import { useAppContext } from "@contexts";
+import { useAppContext } from "@hooks";
+import { cn } from "@utils";
 
 interface DetailsPageWrapper extends React.HTMLAttributes<HTMLElement> {
   pageTitle: string;
@@ -23,7 +24,13 @@ const DetailsPageWrapper = ({
   }, [pageTitle]);
 
   return (
-    <section className="flex h-full max-w-full flex-col gap-6 rounded-lg bg-white p-4 dark:bg-black-700 sm:px-6 sm:py-5">
+    <section
+      className={cn(
+        "flex h-full max-w-full flex-col gap-6 rounded-lg p-4 sm:px-6 sm:py-5",
+        "bg-white",
+        "dark:bg-black-700",
+      )}
+    >
       {pageTag ? <div className="pl-3.5">{pageTag}</div> : null}
       <div className="flex flex-col-reverse items-start justify-between gap-4 sm:flex-row sm:gap-5">
         {pageKpi}

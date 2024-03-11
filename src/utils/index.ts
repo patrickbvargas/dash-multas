@@ -13,7 +13,9 @@ import {
   isAppealDetailedData,
   isAppealData,
   isEmployeeData,
+  isViaCepAddressData,
 } from "./interfaceDataValidation";
+import { isOverAge } from "./isOverAge";
 
 export {
   cn,
@@ -30,4 +32,6 @@ export {
   isTrafficViolationData,
   isAppealData,
   isEmployeeData,
+  isViaCepAddressData,
+  isOverAge,
 };

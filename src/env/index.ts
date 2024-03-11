@@ -1,3 +1,3 @@
-import { FIREBASE_CONFIG } from "./env";
+import { FIREBASE_CONFIG, VIA_CEP_API_BASE_URL } from "./env";
 
-export { FIREBASE_CONFIG };
+export { FIREBASE_CONFIG, VIA_CEP_API_BASE_URL };

@@ -1,0 +1,2 @@
+export const QUERY_STALE_TIME_IN_SECONDS = 60;
+export const NOTIFICATION_TIME_IN_SECONDS = 5;
