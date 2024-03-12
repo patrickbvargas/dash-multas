@@ -8,7 +8,7 @@ interface FormPageWrapperProps {
 
 const FormPageWrapper = ({ page }: FormPageWrapperProps) => {
   return (
-    <div className="flex w-full flex-col gap-4 p-4 sm:p-0">
+    <div className="flex w-full flex-col gap-4 p-4 sm:p-0 ">
       <Heading title={page.title} />
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
         {page.fields.map((field) => (
