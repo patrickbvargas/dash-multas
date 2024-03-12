@@ -4,7 +4,7 @@ import { z } from "zod";
 import { Driver, FormPage } from "@types";
 import { isDriverData, isOverAge } from "@utils";
 import { fetchAddressByZipCode } from "@services";
-import { FormInput, FormSelect, NewForm } from "@components";
+import { FormInput, FormSelect, Form } from "@components";
 import { useEntityCrud, useModalContext, useNotificationContext } from "@hooks";
 import { ADDRESS_STATES, MARITAL_STATUS, LICENSE_CATEGORIES } from "@constants";
 
@@ -324,7 +324,7 @@ const DriverForm = ({ initialDriver = null }: DriverFormProps) => {
   ];
 
   return (
-    <NewForm
+    <Form
       title={isUpdate ? "Editar condutor" : "Novo condutor"}
       formPages={formPages}
       isUpdate={isUpdate}

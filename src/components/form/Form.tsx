@@ -1,7 +1,9 @@
 import React from "react";
-import { FormSteps, FormFields, FormControls } from "@components";
-import { FormPage } from "@types";
 import { cn } from "@utils";
+import { FormPage } from "@types";
+import FormControls from "./components/FormControls";
+import FormStep from "./components/FormStep/FormStep";
+import FormPageWrapper from "./components/FormPageWrapper";
 
 interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
   title: string;
@@ -30,20 +32,20 @@ const Form = ({
   };
 
   return (
-    <section className="flex w-fit overflow-hidden rounded-lg sm:h-[32rem]">
-      {/* <FormSteps
+    <section className="flex max-h-[98vh] w-[90vw] flex-col overflow-hidden rounded-lg sm:h-[32rem] sm:w-auto sm:flex-row">
+      <FormStep
         currentPageIndex={currentPageIndex}
         title={title}
         labels={formPages.map((page) => page.title)}
-      /> */}
+      />
       <form
         className={cn(
-          "flex w-full flex-col items-end gap-4 overflow-auto px-8 pb-4 pt-12 sm:w-[30rem]",
+          "flex w-full flex-col items-end gap-4 overflow-y-scroll pb-4 sm:w-[30rem] sm:px-8 sm:pt-12",
           "bg-gray-50",
           "dark:bg-black-700",
         )}
       >
-        <FormFields formPage={formPages[currentPageIndex]} />
+        <FormPageWrapper page={formPages[currentPageIndex]} />
         <FormControls
           currentPageIndex={currentPageIndex}
           lastPageIndex={formPages.length - 1}
