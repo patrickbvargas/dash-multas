@@ -1,6 +1,7 @@
-import { UnderConstruction } from "@components";
+import { DriverForm, UnderConstruction } from "@components";
 
 const Dashboard = () => {
+  return <DriverForm initialDriver={null} />;
   return <UnderConstruction />;
 };
 

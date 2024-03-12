@@ -54,15 +54,15 @@ const Welcome = () => {
         Bem-vindo(a) ao <span className="text-lg font-semibold uppercase tracking-wider">Dash Multas</span>!
       </p>
       <p>
-        Estou empolgado em apresentar este projeto em desenvolvimento, que visa fornecer uma interface fácil e
-        intuitiva para gerenciar multas de trânsito.
+        Estou empolgado em apresentar este projeto que visa fornecer uma interface fácil e intuitiva para
+        gerenciar multas de trânsito.
       </p>
       <div className="flex flex-col gap-3">
         <p className="font-semibold">Tecnologias:</p>
         <ul className="grid grid-cols-2 gap-3 px-4">
           {tecnologies.map((tecnology) => (
             <li key={tecnology.name} className="flex items-center gap-2 transition-all hover:text-accent">
-              <span className="h-2 w-2 rounded-full bg-accent" />
+              <span className="h-2 w-2 rounded-full bg-accent/70" />
               <a href={tecnology.url} target="_blank">
                 {tecnology.name}
               </a>

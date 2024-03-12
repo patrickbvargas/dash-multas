@@ -9,7 +9,7 @@ function App() {
   return (
     <div
       className={cn(
-        "grid-row relative grid h-full w-full max-w-[80rem] grid-cols-layout grid-rows-layout overflow-hidden lg:rounded-2xl",
+        "relative grid h-full w-full max-w-[80rem] grid-cols-layout grid-rows-layout overflow-hidden lg:rounded-2xl",
         "bg-gray-50",
         "dark:bg-black-900",
       )}

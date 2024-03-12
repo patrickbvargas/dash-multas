@@ -11,7 +11,7 @@ interface Pathname {
   title: string;
 }
 
-const PATHNAME_CONFIG: Pathname[] = [
+const paths: Pathname[] = [
   {
     pathname: "/",
     title: "Dashboard",
@@ -53,7 +53,7 @@ const Header = ({ className = "", ...props }: HeaderProps) => {
   const location = useLocation();
 
   React.useEffect(() => {
-    const matchConfig = PATHNAME_CONFIG.find(({ pathname }) => pathname === location.pathname);
+    const matchConfig = paths.find(({ pathname }) => pathname === location.pathname);
     if (matchConfig) {
       setPageTitle(matchConfig.title);
       document.title = `Dash Multas | ${matchConfig.title}`;
@@ -63,7 +63,7 @@ const Header = ({ className = "", ...props }: HeaderProps) => {
   return (
     <header
       className={cn(
-        "flex flex-col items-center justify-between gap-4 px-2 pb-2 pt-4 sm:flex-row sm:px-8 sm:pb-4 sm:pt-8",
+        "flex flex-col justify-between gap-4 px-2 pb-2 pt-4 sm:flex-row sm:items-center sm:px-8 sm:pb-4 sm:pt-8",
         className,
       )}
       {...props}

@@ -4,7 +4,7 @@ import { z } from "zod";
 import { Driver, FormPage } from "@types";
 import { isDriverData, isOverAge } from "@utils";
 import { fetchAddressByZipCode } from "@services";
-import { FormInput, Form, FormSelect } from "@components";
+import { FormInput, FormSelect, NewForm } from "@components";
 import { useEntityCrud, useModalContext, useNotificationContext } from "@hooks";
 import { ADDRESS_STATES, MARITAL_STATUS, LICENSE_CATEGORIES } from "@constants";
 
@@ -155,193 +155,176 @@ const DriverForm = ({ initialDriver = null }: DriverFormProps) => {
       title: "Identificação",
       validationFn: async () => await trigger(["identification"]),
       fields: [
-        [
+        <div className="col-span-full">
           <FormInput
+            className="col-span-full"
             key="identification.fullName"
             label="Nome completo"
             error={errors.identification?.fullName}
             {...register("identification.fullName")}
             maxLength={50}
-          />,
-        ],
-        [
-          <FormInput
-            key="identification.cpf"
-            label="CPF"
-            error={errors.identification?.cpf}
-            {...register("identification.cpf")}
-            placeholder="Somente números"
-            disabled={isUpdate}
-            maxLength={11}
-          />,
-          <FormInput
-            key="identification.birthdate"
-            label="Data Nascimento"
-            error={errors.identification?.birthdate}
-            {...register("identification.birthdate")}
-            type="date"
-          />,
-        ],
-        [
-          <FormInput
-            key="identification.identification"
-            label="RG"
-            error={errors.identification?.identification}
-            {...register("identification.identification")}
-            maxLength={10}
-          />,
-          <FormSelect
-            key="identification.identificationState"
-            label="UF Emissor"
-            error={errors.identification?.identificationState}
-            {...register("identification.identificationState")}
-            options={ADDRESS_STATES.map((state) => ({ value: state.uf, label: state.uf }))}
-          />,
-        ],
-        [
-          <FormSelect
-            key="identification.maritalStatus"
-            label="Estado Civil"
-            error={errors.identification?.maritalStatus}
-            {...register("identification.maritalStatus")}
-            options={MARITAL_STATUS.map((status) => ({ value: status.name, label: status.name }))}
-          />,
-          <FormInput
-            key="identification.profession"
-            label="Profissão"
-            error={errors.identification?.profession}
-            {...register("identification.profession")}
-            isOpcional
-            maxLength={50}
-          />,
-        ],
+          />
+        </div>,
+        <FormInput
+          key="identification.cpf"
+          label="CPF"
+          error={errors.identification?.cpf}
+          {...register("identification.cpf")}
+          placeholder="Somente números"
+          disabled={isUpdate}
+          maxLength={11}
+        />,
+        <FormInput
+          key="identification.birthdate"
+          label="Data Nascimento"
+          error={errors.identification?.birthdate}
+          {...register("identification.birthdate")}
+          type="date"
+        />,
+        <FormInput
+          key="identification.identification"
+          label="RG"
+          error={errors.identification?.identification}
+          {...register("identification.identification")}
+          maxLength={10}
+        />,
+        <FormSelect
+          key="identification.identificationState"
+          label="UF Emissor"
+          error={errors.identification?.identificationState}
+          {...register("identification.identificationState")}
+          options={ADDRESS_STATES.map((state) => ({ value: state.uf, label: state.uf }))}
+        />,
+        <FormSelect
+          key="identification.maritalStatus"
+          label="Estado Civil"
+          error={errors.identification?.maritalStatus}
+          {...register("identification.maritalStatus")}
+          options={MARITAL_STATUS.map((status) => ({ value: status.name, label: status.name }))}
+        />,
+        <FormInput
+          key="identification.profession"
+          label="Profissão"
+          error={errors.identification?.profession}
+          {...register("identification.profession")}
+          isOpcional
+          maxLength={50}
+        />,
       ],
     },
     {
       title: "Endereço",
       validationFn: async () => await trigger(["address"]),
       fields: [
-        [
-          <FormInput
-            key="address.zipCode"
-            label="CEP"
-            error={errors.address?.zipCode}
-            {...register("address.zipCode", { onBlur: handleZipCodeOnBlur })}
-            maxLength={8}
-          />,
-          <FormInput
-            key="address.houseNumber"
-            label="Número"
-            error={errors.address?.houseNumber}
-            {...register("address.houseNumber")}
-            maxLength={5}
-          />,
-        ],
-        [
+        <FormInput
+          key="address.zipCode"
+          label="CEP"
+          error={errors.address?.zipCode}
+          {...register("address.zipCode", { onBlur: handleZipCodeOnBlur })}
+          maxLength={8}
+        />,
+        <FormInput
+          key="address.houseNumber"
+          label="Número"
+          error={errors.address?.houseNumber}
+          {...register("address.houseNumber")}
+          maxLength={5}
+        />,
+        <div className="col-span-full">
           <FormInput
             key="address.street"
             label="Logradouro"
             error={errors.address?.street}
             {...register("address.street")}
             maxLength={50}
-          />,
-        ],
-        [
-          <FormInput
-            key="address.neighborhood"
-            label="Bairro"
-            error={errors.address?.neighborhood}
-            {...register("address.neighborhood")}
-            maxLength={30}
-          />,
-          <FormInput
-            key="address.complement"
-            label="Complemento"
-            error={errors.address?.complement}
-            {...register("address.complement")}
-            isOpcional
-            maxLength={20}
-          />,
-        ],
-        [
-          <FormInput
-            key="address.city"
-            label="Cidade"
-            error={errors.address?.city}
-            {...register("address.city")}
-            maxLength={50}
-          />,
-          <FormSelect
-            key="address.state"
-            label="Estado"
-            error={errors.address?.state}
-            {...register("address.state")}
-            options={ADDRESS_STATES.map((state) => ({ value: state.name, label: state.name }))}
-          />,
-        ],
+          />
+        </div>,
+        <FormInput
+          key="address.neighborhood"
+          label="Bairro"
+          error={errors.address?.neighborhood}
+          {...register("address.neighborhood")}
+          maxLength={30}
+        />,
+        <FormInput
+          key="address.complement"
+          label="Complemento"
+          error={errors.address?.complement}
+          {...register("address.complement")}
+          isOpcional
+          maxLength={20}
+        />,
+        <FormInput
+          key="address.city"
+          label="Cidade"
+          error={errors.address?.city}
+          {...register("address.city")}
+          maxLength={50}
+        />,
+        <FormSelect
+          key="address.state"
+          label="Estado"
+          error={errors.address?.state}
+          {...register("address.state")}
+          options={ADDRESS_STATES.map((state) => ({ value: state.name, label: state.name }))}
+        />,
       ],
     },
     {
       title: "Habilitação",
       validationFn: async () => await trigger(["license"]),
       fields: [
-        [
-          <FormInput
-            key="license.licenseNumber"
-            label="CNH"
-            error={errors.license?.licenseNumber}
-            {...register("license.licenseNumber")}
-            maxLength={12}
-          />,
-          <FormSelect
-            key="license.category"
-            label="Categoria"
-            error={errors.license?.category}
-            {...register("license.category")}
-            options={LICENSE_CATEGORIES.map((category) => ({ value: category.name, label: category.name }))}
-          />,
-        ],
-        [
-          <FormInput
-            key="license.governmentPassword"
-            label="Senha Acesso GOV"
-            error={errors.license?.governmentPassword}
-            {...register("license.governmentPassword")}
-            type="password"
-            maxLength={20}
-          />,
-        ],
+        <FormInput
+          key="license.licenseNumber"
+          label="CNH"
+          error={errors.license?.licenseNumber}
+          {...register("license.licenseNumber")}
+          maxLength={12}
+        />,
+        <FormSelect
+          key="license.category"
+          label="Categoria"
+          error={errors.license?.category}
+          {...register("license.category")}
+          options={LICENSE_CATEGORIES.map((category) => ({ value: category.name, label: category.name }))}
+        />,
+        <FormInput
+          key="license.governmentPassword"
+          label="Senha Acesso GOV"
+          error={errors.license?.governmentPassword}
+          {...register("license.governmentPassword")}
+          type="password"
+          maxLength={20}
+        />,
       ],
     },
     {
       title: "Contato",
       validationFn: async () => await trigger(["contact"]),
       fields: [
-        [
-          <FormInput
-            key="contact.email"
-            label="Email"
-            error={errors.contact?.email}
-            {...register("contact.email")}
-            type="email"
-            maxLength={50}
-          />,
-          <FormInput
-            key="contact.phoneNumber"
-            label="Celular"
-            error={errors.contact?.phoneNumber}
-            {...register("contact.phoneNumber")}
-            type="tel"
-            placeholder="DDD999999999"
-            maxLength={12}
-          />,
-        ],
+        <FormInput
+          key="contact.email"
+          label="Email"
+          error={errors.contact?.email}
+          {...register("contact.email")}
+          type="email"
+          maxLength={50}
+        />,
+        <FormInput
+          key="contact.phoneNumber"
+          label="Celular"
+          error={errors.contact?.phoneNumber}
+          {...register("contact.phoneNumber")}
+          type="tel"
+          placeholder="DDD999999999"
+          maxLength={12}
+        />,
       ],
     },
   ];
 
   return (
-    <Form
+    <NewForm
       title={isUpdate ? "Editar condutor" : "Novo condutor"}
       formPages={formPages}
       isUpdate={isUpdate}

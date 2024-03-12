@@ -26,7 +26,7 @@ const DetailsPageWrapper = ({
   return (
     <section
       className={cn(
-        "flex h-full max-w-full flex-col gap-6 rounded-lg p-4 sm:px-6 sm:py-5",
+        "flex h-full flex-col gap-6 rounded-lg p-4 sm:px-6 sm:py-5",
         "bg-white",
         "dark:bg-black-700",
       )}

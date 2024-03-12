@@ -1,9 +1,10 @@
 import React from "react";
-import { FormSteps, FormFields, FormControls } from "@components";
-import { FormPage } from "@types";
+import FormStep from "./FormStep/FormStep";
+import FormControls from "./FormControls";
 import { cn } from "@utils";
+import { FormPage } from "@types";
 
-interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
+interface FormRootProps extends React.FormHTMLAttributes<HTMLFormElement> {
   title: string;
   formPages: FormPage[];
   isUpdate: boolean;
@@ -11,13 +12,13 @@ interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
   submitCallback: () => void;
 }
 
-const Form = ({
+const FormRoot = ({
   title = "",
   formPages,
   isUpdate = false,
   isSubmitting = false,
   submitCallback,
-}: FormProps) => {
+}: FormRootProps) => {
   const [currentPageIndex, setCurrentPageIndex] = React.useState(0);
 
   const handleNextPage = async () => {
@@ -31,11 +32,11 @@ const Form = ({
 
   return (
     <section className="flex w-fit overflow-hidden rounded-lg sm:h-[32rem]">
-      {/* <FormSteps
+      <FormStep
         currentPageIndex={currentPageIndex}
         title={title}
         labels={formPages.map((page) => page.title)}
-      /> */}
+      />
       <form
         className={cn(
           "flex w-full flex-col items-end gap-4 overflow-auto px-8 pb-4 pt-12 sm:w-[30rem]",
@@ -43,7 +44,7 @@ const Form = ({
           "dark:bg-black-700",
         )}
       >
-        <FormFields formPage={formPages[currentPageIndex]} />
+        {formPages[currentPageIndex].component}
         <FormControls
           currentPageIndex={currentPageIndex}
           lastPageIndex={formPages.length - 1}
@@ -58,4 +59,4 @@ const Form = ({
   );
 };
 
-export default Form;
+export default FormRoot;

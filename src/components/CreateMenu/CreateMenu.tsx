@@ -43,9 +43,9 @@ const CreateMenu = () => {
       />
       <div
         className={cn(
-          "pointer-events-none absolute right-0 top-12 rounded-lg p-4 opacity-0 transition-opacity duration-300",
-          "bg-white shadow-sm",
-          "dark:bg-black-700",
+          "pointer-events-none absolute right-0 top-12 rounded-lg p-2 opacity-0 ring-2 transition-opacity duration-300",
+          "bg-white shadow-sm ring-gray-200",
+          "dark:bg-black-700 dark:ring-black-600",
           isVisible && "pointer-events-auto opacity-100",
         )}
       >

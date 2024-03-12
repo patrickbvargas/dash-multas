@@ -6,9 +6,11 @@ interface FormFieldRowProps {
 
 const FormFieldRow = ({ fields }: FormFieldRowProps) => {
   return (
-    <div className="flex gap-4">
+    <div className="gap-4 sm:flex">
       {fields.map((field) => (
-        <React.Fragment key={field.key}>{field}</React.Fragment>
+        <div key={field.key} className="flex flex-col gap-2">
+          {field}
+        </div>
       ))}
     </div>
   );

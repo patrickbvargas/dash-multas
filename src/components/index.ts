@@ -15,6 +15,7 @@ import ActionControls from "./ui/ActionControls";
 import PriorityIndicator from "./ui/PriorityIndicator";
 import DetailsPageWrapper from "./ui/DetailsPageWrapper";
 import UnderConstruction from "./ui/UnderConstruction";
+import NewForm from "./NewForm/NewForm";
 import Form from "./form/Form";
 import FormRow from "./form/FormRow";
 import FormInput from "./form/FormInput";
@@ -60,6 +61,7 @@ export {
   FormFields,
   FormControls,
   Form,
+  NewForm,
   FormRow,
   CreateMenu,
   DriverForm,
