@@ -16,6 +16,7 @@ import {
   isViaCepAddressData,
 } from "./interfaceDataValidation";
 import { isOverAge } from "./isOverAge";
+import { getMaxBirthdateFor18YearsOld } from "./getMaxBirthdate";
 
 export {
   cn,
@@ -34,4 +35,5 @@ export {
   isEmployeeData,
   isViaCepAddressData,
   isOverAge,
+  getMaxBirthdateFor18YearsOld,
 };

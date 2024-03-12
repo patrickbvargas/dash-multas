@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Driver, FormPage } from "@types";
-import { isDriverData, isOverAge } from "@utils";
+import { isDriverData, isOverAge, getMaxBirthdateFor18YearsOld } from "@utils";
 import { fetchAddressByZipCode } from "@services";
 import { FormInput, FormSelect, Form } from "@components";
 import { useEntityCrud, useModalContext, useNotificationContext } from "@hooks";
@@ -180,6 +180,7 @@ const DriverForm = ({ initialDriver = null }: DriverFormProps) => {
           error={errors.identification?.birthdate}
           {...register("identification.birthdate")}
           type="date"
+          max={getMaxBirthdateFor18YearsOld()}
         />,
         <FormInput
           key="identification.identification"
