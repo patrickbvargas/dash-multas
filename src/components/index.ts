@@ -20,7 +20,7 @@ import ActionControls from "./ui/ActionControls";
 import PriorityIndicator from "./ui/PriorityIndicator";
 import DetailsPageWrapper from "./ui/DetailsPageWrapper";
 import UnderConstruction from "./ui/UnderConstruction";
-import Form from "./Form/Form";
+import Form from "./CustomForm/Form";
 import CreateMenu from "./CreateMenu/CreateMenu";
 import DriverForm from "./DriverForm/DriverForm";
 import Card from "./Card/Card";
