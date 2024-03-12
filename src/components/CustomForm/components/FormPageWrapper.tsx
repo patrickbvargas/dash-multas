@@ -1,5 +1,6 @@
 import { Heading } from "@components";
 import { FormPage } from "@types";
+import React from "react";
 
 interface FormPageWrapperProps {
   page: FormPage;
@@ -11,7 +12,7 @@ const FormPageWrapper = ({ page }: FormPageWrapperProps) => {
       <Heading title={page.title} />
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
         {page.fields.map((field) => (
-          <div key={field.key}>{field}</div>
+          <React.Fragment key={field.key}>{field}</React.Fragment>
         ))}
       </div>
     </div>
