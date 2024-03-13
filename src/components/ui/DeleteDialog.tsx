@@ -1,3 +1,4 @@
+import React from "react";
 import { cn } from "@utils";
 import { Entity } from "@types";
 import { Button } from "@components";
@@ -7,7 +8,7 @@ import { useModalContext } from "@hooks";
 interface DeleteDialogProps {
   entity: Entity;
   identification: string;
-  onConfirm: () => void;
+  onConfirm: () => Promise<void>;
 }
 
 const entityAlias: Record<Entity, string> = {
@@ -16,15 +17,13 @@ const entityAlias: Record<Entity, string> = {
   trafficViolation: "infração",
 };
 
-const DeleteDialog = ({
-  entity = "driver",
-  identification = "",
-  onConfirm = () => {},
-}: DeleteDialogProps) => {
+const DeleteDialog = ({ entity = "driver", identification = "", onConfirm }: DeleteDialogProps) => {
   const { closeModal } = useModalContext();
+  const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleConfirm = () => {
-    onConfirm();
+  const handleConfirm = async () => {
+    setIsLoading(true);
+    await onConfirm();
     closeModal();
   };
 
@@ -44,11 +43,13 @@ const DeleteDialog = ({
       <div className="flex justify-end gap-2">
         <Button label="Cancelar" variant="ghost" onClick={closeModal} />
         <Button
-          label="Remover"
-          icon={<TrashIcon className="h-4" />}
+          label={isLoading ? "Processando..." : "Remover"}
+          icon={isLoading ? null : <TrashIcon className="h-4" />}
           variant="danger"
           className="rounded-md"
           onClick={handleConfirm}
+          type="submit"
+          disabled={isLoading}
         />
       </div>
     </div>

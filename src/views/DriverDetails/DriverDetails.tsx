@@ -46,8 +46,8 @@ const DriverDetails = () => {
         <DeleteDialog
           entity="driver"
           identification={data.driver.fullName}
-          onConfirm={() => {
-            deleteDriver(data.driver);
+          onConfirm={async () => {
+            await deleteDriver(data.driver);
           }}
         />
       ),
