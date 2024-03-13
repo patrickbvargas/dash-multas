@@ -54,8 +54,9 @@ const Welcome = () => {
         Bem-vindo(a) ao <span className="text-lg font-semibold uppercase tracking-wider">Dash Multas</span>!
       </p>
       <p>
-        Estou empolgado em apresentar este projeto que visa fornecer uma interface fácil e intuitiva para
-        gerenciar multas de trânsito.
+        Apresento este projeto que propõe uma interface fácil e intuitiva para gerenciar multas de trânsito. O
+        site possibilita a administração de recursos relacionados a multas, permitindo o acompanhamento dos
+        registros conforme o condutor e seu status perante o órgão regulatório.
       </p>
       <div className="flex flex-col gap-3">
         <p className="font-semibold">Tecnologias:</p>
