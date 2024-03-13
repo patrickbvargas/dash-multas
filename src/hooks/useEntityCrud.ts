@@ -67,7 +67,7 @@ export function useEntityCrud(): useEntityCrudOutput {
       const trafficViolations = await fetchTrafficViolationsByDriverId(driver.id);
       if (Array.isArray(trafficViolations) && trafficViolations.length > 0) {
         showNotification({
-          message: `Acesso negado! O condutor possui infrações associadas. Por favor, remova-as antes de prosseguir.`,
+          message: `Condutor possui infrações associadas. Por favor, remova-as antes de prosseguir.`,
           variant: "danger",
         });
         return;
