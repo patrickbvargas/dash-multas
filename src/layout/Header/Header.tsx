@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { cn } from "@utils";
 import { useAppContext } from "@hooks";
-import { CreateMenu } from "@components";
+import { CreateMenu, ThemeSwitcher } from "@components";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -78,6 +78,7 @@ const Header = ({ className = "", ...props }: HeaderProps) => {
         {pageTitle}
       </h1>
       <div className="flex gap-2">
+        <ThemeSwitcher />
         <CreateMenu />
       </div>
     </header>
