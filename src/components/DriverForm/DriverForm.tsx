@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Driver, FormPage } from "@types";
-import { isDriverData, isOverAge, getMaxBirthdateFor18YearsOld } from "@utils";
+import { isDriverData, isOverAge, getMaxBirthdateFor18YearsOld, getFirestoreUtils } from "@utils";
 import { fetchAddressByZipCode } from "@services";
 import { FormInput, FormSelect, Form } from "@components";
 import { useEntityCrud, useModalContext, useNotificationContext } from "@hooks";
@@ -81,6 +81,7 @@ interface DriverFormProps {
 
 const DriverForm = ({ initialDriver = null }: DriverFormProps) => {
   const isUpdate = !!initialDriver && isDriverData(initialDriver);
+  const { getCustomErrorMessage } = getFirestoreUtils();
   const { closeModal } = useModalContext();
   const { createDriver, updateDriver } = useEntityCrud();
   const { showNotification } = useNotificationContext();
@@ -144,7 +145,7 @@ const DriverForm = ({ initialDriver = null }: DriverFormProps) => {
     } catch (error) {
       console.error(error);
       showNotification({
-        message: "Ocorreu um erro durante esta operação. Por favor, tente novamente mais tarde.",
+        message: getCustomErrorMessage(error),
         variant: "danger",
       });
     }

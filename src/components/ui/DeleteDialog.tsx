@@ -1,9 +1,9 @@
 import React from "react";
-import { cn } from "@utils";
+import { cn, getFirestoreUtils } from "@utils";
 import { Entity } from "@types";
 import { Button } from "@components";
 import { TrashIcon } from "@icons/mini";
-import { useModalContext } from "@hooks";
+import { useModalContext, useNotificationContext } from "@hooks";
 
 interface DeleteDialogProps {
   entity: Entity;
@@ -19,12 +19,23 @@ const entityAlias: Record<Entity, string> = {
 
 const DeleteDialog = ({ entity = "driver", identification = "", onConfirm }: DeleteDialogProps) => {
   const { closeModal } = useModalContext();
+  const { getCustomErrorMessage } = getFirestoreUtils();
+  const { showNotification } = useNotificationContext();
   const [isLoading, setIsLoading] = React.useState(false);
 
   const handleConfirm = async () => {
-    setIsLoading(true);
-    await onConfirm();
-    closeModal();
+    try {
+      setIsLoading(true);
+      await onConfirm();
+    } catch (error) {
+      console.error(error);
+      showNotification({
+        message: getCustomErrorMessage(error),
+        variant: "danger",
+      });
+    } finally {
+      closeModal();
+    }
   };
 
   return (

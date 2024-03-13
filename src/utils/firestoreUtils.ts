@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { FirebaseError, initializeApp } from "firebase/app";
 import {
   collection,
   deleteDoc,
@@ -9,6 +9,7 @@ import {
   query,
   setDoc,
   where,
+  serverTimestamp,
 } from "firebase/firestore";
 import { FIREBASE_CONFIG } from "@environment";
 import { Appeal, Driver, TrafficViolation } from "@types";
@@ -85,13 +86,28 @@ export function getFirestoreUtils() {
     }
   };
 
+  const getCustomErrorMessage = (error: unknown) => {
+    const errorMessage =
+      error instanceof FirebaseError && error.message.includes("Missing or insufficient permissions")
+        ? "Você não possui permissões suficientes para prosseguir com esta ação."
+        : "Houve um erro durante esta operação. Por favor, tente novamente mais tarde.";
+    return errorMessage;
+  };
+
+  const getTimestamp = () => {
+    return serverTimestamp();
+  };
+
   return {
+    app,
     db,
     fetchAllDocs: handleFetchAllDocs,
     fetchDocById: handleFetchDocById,
     fetchDocsByQuery: handleFetchDocByQuery,
     setDoc: handleSetDoc,
     deleteDoc: handleDeleteDoc,
+    getCustomErrorMessage,
+    getTimestamp,
     collectionNames: {
       drivers: "drivers",
       trafficViolations: "traffic-violations",

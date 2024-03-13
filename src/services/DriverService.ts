@@ -59,8 +59,7 @@ export const createDriver = async (driver: Driver): Promise<string> => {
   try {
     const fb = getFirestoreUtils();
     const uuid = crypto.randomUUID();
-    const timestamp = new Date().toISOString();
-    const driverPayload = { ...driver, id: uuid, createdAt: timestamp };
+    const driverPayload = { ...driver, id: uuid, createdAt: fb.getTimestamp() };
     await fb.setDoc(fb.collectionNames.drivers, driverPayload, false);
     return uuid;
   } catch (error) {
@@ -72,8 +71,7 @@ export const createDriver = async (driver: Driver): Promise<string> => {
 export const updateDriver = async (driver: Driver): Promise<void> => {
   try {
     const fb = getFirestoreUtils();
-    const timestamp = new Date().toISOString();
-    const driverPayload = { ...driver, updatedAt: timestamp };
+    const driverPayload = { ...driver, updatedAt: fb.getTimestamp() };
     await fb.setDoc(fb.collectionNames.drivers, driverPayload, true);
   } catch (error) {
     console.error(error);
