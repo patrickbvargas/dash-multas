@@ -13,6 +13,7 @@ import {
   Vehicle,
 } from "./trafficViolation.interfaces";
 import { Entity } from "./global.interface";
+import { HeroIcon } from "./global.interface";
 
 export type {
   ModalProps,
@@ -36,4 +37,5 @@ export type {
   FormPage,
   ViaCepAddress,
   Entity,
+  HeroIcon,
 };

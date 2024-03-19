@@ -12,60 +12,61 @@ import {
   WalletIcon,
 } from "@icons/solid";
 import { cn } from "@utils";
+import { HeroIcon } from "@types";
 
 interface NavLink {
-  to: string;
-  icon: React.ReactNode;
+  href: string;
   label: string;
+  Icon: HeroIcon;
 }
 
 type NavGroup = NavLink[];
 
-const NAV_LINKS: NavGroup[] = [
+const links: NavGroup[] = [
   [
     {
-      to: "/",
-      icon: <ChartPieIcon className="h-6" />,
+      href: "/",
       label: "Dashboard",
+      Icon: ChartPieIcon,
     },
     {
-      to: "/calendario",
-      icon: <CalendarIcon className="h-6" />,
+      href: "/calendario",
       label: "Calendário",
+      Icon: CalendarIcon,
     },
   ],
   [
     {
-      to: "/administrativo",
-      icon: <FolderOpenIcon className="h-6" />,
+      href: "/administrativo",
       label: "Administrativo",
+      Icon: FolderOpenIcon,
     },
     {
-      to: "/judicial",
-      icon: <WalletIcon className="h-6" />,
+      href: "/judicial",
       label: "Judicial",
+      Icon: WalletIcon,
     },
     {
-      to: "/juridico",
-      icon: <BriefcaseIcon className="h-6" />,
+      href: "/juridico",
       label: "Jurídico",
+      Icon: BriefcaseIcon,
     },
   ],
   [
     {
-      to: "/recursos",
-      icon: <InboxIcon className="h-6" />,
+      href: "/recursos",
       label: "Recursos",
+      Icon: InboxIcon,
     },
     {
-      to: "/condutores",
-      icon: <UserIcon className="h-6" />,
+      href: "/condutores",
       label: "Condutores",
+      Icon: UserIcon,
     },
     {
-      to: "/infracoes",
-      icon: <DocumentIcon className="h-6" />,
+      href: "/infracoes",
       label: "Infrações",
+      Icon: DocumentIcon,
     },
   ],
 ];
@@ -77,14 +78,14 @@ const SidebarNav = ({ className = "", ...props }: SidebarNavProps) => {
   return (
     <nav className="w-full flex-1" {...props}>
       <ul className={cn("flex flex-col gap-3", className)}>
-        {NAV_LINKS.map((group, index) => (
+        {links.map((group, index) => (
           <React.Fragment key={index}>
-            {group.map(({ to, icon, label }) => (
+            {group.map(({ href, label, Icon }) => (
               <li key={label}>
-                <SidebarNavLink to={to} icon={icon} label={label} />
+                <SidebarNavLink href={href} label={label} Icon={Icon} />
               </li>
             ))}
-            {index < NAV_LINKS.length - 1 && (
+            {index < links.length - 1 && (
               <li key={`divider-${index}`}>
                 <SidebarNavDivider />
               </li>
